@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const sendWelcomeEmail = require("../utils/sendWelcomeEmail");
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -72,6 +73,8 @@ router.post("/signup", (req, res, next) => {
       res.status(201).json({ user: user });
     })
     .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
+
+  sendWelcomeEmail(email, name);
 });
 
 // POST  /auth/login - Verifies email and password and returns a JWT
