@@ -17,6 +17,7 @@
     "mongoose": "^6.9.2",
     "morgan": "^1.10.0",
     "node-notifier": "^10.0.1",
+    "node-schedule": "^2.1.1",
     "sendinblue": "^0.0.1",
     "sib-api-v3-sdk": "^8.5.0"
   },
