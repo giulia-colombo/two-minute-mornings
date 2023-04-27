@@ -12,7 +12,9 @@ const User = require("../models/User.model");
 
 // Require necessary (isAuthenticated) middleware in order to control access to specific routes
 const { isAuthenticated } = require("../middleware/jwt.middleware.js");
-const { sendTransactionalEmail } = require("../utils/notifications/emailNotifications");
+const {
+  sendTransactionalEmail,
+} = require("../utils/notifications/sendTransactionalEmail");
 
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
@@ -73,10 +75,10 @@ router.post("/signup", (req, res, next) => {
       res.status(201).json({ user: user });
     })
     .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
-  
-  const welcomeEmailHtmlContent = `<p>Thanks for signing up for the Two Minute Mornings App, ${name}!</p>`
-  const welcomeEmailSubject = "Welcome to Two Minute Morning!"
-  sendTransactionalEmail(email, welcomeEmailHtmlContent, welcomeEmailSubject);
+
+  const welcomeEmailHtmlContent = `<p>Thanks for signing up for the Two Minute Mornings App, ${name}!</p>`;
+  const welcomeEmailSubject = "Welcome to Two Minute Morning!";
+  sendTransactionalEmail(email, welcomeEmanplHtmlContent, welcomeEmailSubject);
 });
 
 // POST  /auth/login - Verifies email and password and returns a JWT
