@@ -12,9 +12,7 @@ const User = require("../models/User.model");
 
 // Require necessary (isAuthenticated) middleware in order to control access to specific routes
 const { isAuthenticated } = require("../middleware/jwt.middleware.js");
-const {
-  sendTransactionalEmail,
-} = require("../utils/notifications/sendTransactionalEmail");
+const { sendWelcomeEmail } = require("../utils/notifications/emailNotifications");
 
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
@@ -76,9 +74,7 @@ router.post("/signup", (req, res, next) => {
     })
     .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
 
-  const welcomeEmailHtmlContent = `<p>Thanks for signing up for the Two Minute Mornings App, ${name}!</p>`;
-  const welcomeEmailSubject = "Welcome to Two Minute Morning!";
-  sendTransactionalEmail(email, welcomeEmanplHtmlContent, welcomeEmailSubject);
+  sendWelcomeEmail(email, name);
 });
 
 // POST  /auth/login - Verifies email and password and returns a JWT
@@ -109,6 +105,9 @@ router.post("/login", (req, res, next) => {
 
         // Create an object that will be set as the token payload
         const payload = { _id, email, name };
+
+        //add the user_id property to the req object
+        req.user_id = _id;
 
         // Create a JSON Web Token and sign it
         const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {

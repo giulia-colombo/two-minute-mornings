@@ -5,15 +5,19 @@ const User = require("../models/User.model");
 
 // GET /api/entries - for that user
 // this probably needs isOwner mw
-router.get("/entries", (req, res, next) => {
+router.get("/entries", async (req, res, next) => {
   const creator = req.payload._id;
+try {
+  const allEntries =
+    await Entry.find({ creator: creator })
+    res.json(allEntries)
+  
+} catch (error) {
+  console.error(error)
+  res.status(500).send("Internal server error")
+}
 
-  Entry.find({ creator: creator })
-    .then((allEntries) => {
-      console.log(allEntries);
-      res.json(allEntries);
-    })
-    .catch((err) => console.log(err));
+
 });
 
 // GET /api/entries/:entryId
@@ -126,5 +130,19 @@ router.delete("/entries/:entryId", async (req, res, next) => {
     }
   }
 });
+
+//GET - filter entries by month and year
+router.get("/entries", async (req, res) => {
+  try {
+    const {year, month} = req.query;
+
+    const filteredEntries = await Entry.find({year, month});
+    
+    res.json(filteredEntries);
+  } catch {
+    console.log(err);
+  res.status(500).send("Server error")
+  }
+})
 
 module.exports = router;

@@ -5,19 +5,23 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+// import DiaryPage from "./pages/DiaryPage/DiaryPage.jsx"
+import DiaryPage2 from "./pages/DiaryPage2/DiaryPage2"
+import TodayPage from "./pages/TodayPage/TodayPage.jsx"
+import StatsPage from "./pages/StatsPage/StatsPage.jsx"
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
-import Button from "./components/Button/Button";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-
+      <Sidebar/>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route index element={<HomePage />} />
 
         <Route
           path="/profile"
@@ -42,6 +46,33 @@ function App() {
             <IsAnon>
               <LoginPage />
             </IsAnon>
+          }
+        />
+
+        <Route
+          path="/diary"
+          element={
+            <IsPrivate>
+              <DiaryPage2/>
+            </IsPrivate>
+          }
+        />
+
+          <Route
+          path="/today"
+          element={
+            <IsPrivate>
+              <TodayPage/>
+            </IsPrivate> 
+          }
+        />
+
+          <Route
+          path="/stats"
+          element={
+            <IsPrivate>
+              <StatsPage/>
+            </IsPrivate>
           }
         />
       </Routes>
