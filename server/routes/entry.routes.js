@@ -1,56 +1,47 @@
-const router = require("express").Router();
-const mongoose = require("mongoose");
-const Entry = require("../models/Entry.model");
-const User = require("../models/User.model");
+const router = require('express').Router();
+// const mongoose = require('mongoose');
+const Entry = require('../models/Entry.model');
+const User = require('../models/User.model');
+const { isAuthenticated } = require('../middleware/jwt.middleware');
+import stats from '../stats/stats.js';
 
-// GET /api/entries - for that user
-// this probably needs isOwner mw
-router.get("/entries", async (req, res, next) => {
+// GET /api/entries
+router.get('/entries', isAuthenticated, async (req, res, next) => {
   const creator = req.payload._id;
-try {
-  const allEntries =
-    await Entry.find({ creator: creator })
-    res.json(allEntries)
-  
-} catch (error) {
-  console.error(error)
-  res.status(500).send("Internal server error")
-}
-
-
+  try {
+    const allEntries = await Entry.find({ creator: creator });
+    res.json(allEntries);
+  } catch (error) {
+    logger.error(error);
+    res.status(500).send('Internal server error');
+  }
 });
 
-// GET /api/entries/:entryId
-//this probably needs isOwner mw
-router.get("/entries/:entryId", async (req, res, next) => {
+// GET /api/entries/:entryId REVIEW do we need this?
+router.get('/entries/:entryId', isAuthenticated, async (req, res, next) => {
   const { entryId } = req.params;
-
-  //if the entry belongs in the [entries] arr of that user, can show the entry
-  //find the user thats logged in
-  //access the [entries] arr
-  //check if id of entry is included in [entries] array
   const creatorId = req.payload._id;
-  console.log("creatorId ==> ", creatorId);
+  logger.info('creatorId ==> ', creatorId);
 
   const foundUser = await User.findById(creatorId);
-  console.log("foundUser ===> ", foundUser);
+  logger.info('foundUser ===> ', foundUser);
 
   if (foundUser.entries.includes(entryId)) {
     Entry.findById(entryId)
-      .then((oneEntry) => {
-        console.log(oneEntry);
+      .then(oneEntry => {
+        logger.info(oneEntry);
         res.json(oneEntry);
       })
-      .catch((err) => console.log(err));
+      .catch(err => logger.info(err));
   } else {
     res.status(404).send();
   }
 });
 
 // POST /api/entries
-router.post("/entries", async (req, res, next) => {
+router.post('/entries', isAuthenticated, async (req, res, next) => {
   const { focusPrompt, gratefulPrompt, letGoPrompt } = req.body;
-  console.log("req.body ===> ", req.body);
+  logger.info('req.body ===> ', req.body);
 
   const creator = req.payload._id;
 
@@ -68,21 +59,21 @@ router.post("/entries", async (req, res, next) => {
     entryCreator.save();
     res.json({ newEntry, entryCreator });
   } catch (err) {
-    console.log("Error while creating a new entry: ", err);
+    logger.info('Error while creating a new entry: ', err);
   }
 });
 
 // PUT /api/entries/:entryId (update an entry by its id)
-router.put("/entries/:entryId", async (req, res, next) => {
+router.put('/entries/:entryId', isAuthenticated, async (req, res, next) => {
   const { entryId } = req.params;
 
   // const {focusPrompt, gratefulPrompt, letGoPrompt} = req.body;
 
   const creatorId = req.payload._id;
-  console.log("creatorId ==> ", creatorId);
+  logger.info('creatorId ==> ', creatorId);
 
   const foundUser = await User.findById(creatorId);
-  console.log("foundUser ===> ", foundUser);
+  logger.info('foundUser ===> ', foundUser);
 
   if (foundUser.entries.includes(entryId)) {
     try {
@@ -92,57 +83,101 @@ router.put("/entries/:entryId", async (req, res, next) => {
       editedEntry.save();
       res.json(editedEntry);
     } catch (err) {
-      console.log("Error while updating the entry: ", err);
+      logger.info('Error while updating the entry: ', err);
     }
   }
 });
 
 // DELETE /api/entries/:entryId
 //must delete the entry document and also remove it from the [entries] of the User/creator
-router.delete("/entries/:entryId", async (req, res, next) => {
+router.delete('/entries/:entryId', isAuthenticated, async (req, res, next) => {
   const { entryId } = req.params;
 
   const creatorId = req.payload._id;
-  console.log("creatorId ==> ", creatorId);
+  logger.info('creatorId ==> ', creatorId);
 
   const foundUser = await User.findById(creatorId);
-  console.log("foundUser ===> ", foundUser);
+  logger.info('foundUser ===> ', foundUser);
 
   if (foundUser.entries.includes(entryId)) {
     try {
       const entryToDelete = await Entry.findById(entryId);
-      console.log("entryToDelete: ", entryToDelete);
+      logger.info('entryToDelete: ', entryToDelete);
       //must find the User creator, then grab [entries], then splice the entryToDelete
       const creatorId = entryToDelete.creator;
       const creator = await User.findById(creatorId);
-      console.log("creator: ", JSON.stringify(creator, null, 2));
-      console.log("creator.entries ==> ", creator.entries);
+      logger.info('creator: ', JSON.stringify(creator, null, 2));
+      logger.info('creator.entries ==> ', creator.entries);
       const entryIndex = creator.entries.indexOf(entryId);
-      console.log("entryIndex: ", entryIndex);
+      logger.info('entryIndex: ', entryIndex);
       creator.entries.splice(entryIndex, 1);
-      console.log("current entries: ", creator.entries);
+      logger.info('current entries: ', creator.entries);
       creator.save();
 
       await Entry.findByIdAndRemove(entryId);
       res.json({ message: `Entry with entryId ${entryId} has been removed.` });
     } catch (err) {
-      console.log("Error while deleting the entry: ", err);
+      logger.info('Error while deleting the entry: ', err);
     }
   }
 });
 
 //GET - filter entries by month and year
-router.get("/entries", async (req, res) => {
+router.get('/entries', isAuthenticated, async (req, res) => {
   try {
-    const {year, month} = req.query;
+    const { year, month } = req.query;
 
-    const filteredEntries = await Entry.find({year, month});
-    
+    const filteredEntries = await Entry.find({ year, month });
+
     res.json(filteredEntries);
   } catch {
-    console.log(err);
-  res.status(500).send("Server error")
+    logger.info(err);
+    res.status(500).send('Server error');
   }
-})
+});
+
+// GET - stats page for the user.
+router.get('entries/stats', isAuthenticated, async (req, res) => {
+  const userId = req.payload._id;
+  const { year } = req.query;
+
+  try {
+    // display the values resulting from our metric calculations
+    //import stats.js file
+    //call the respective functions for every stat and assign them to a variable
+
+    // month with most entries for a year for user
+    // TO DO: where do we get the year param?
+    const monthWithMostEntriesYear = await stats.getMonthWithMostEntriesYear(
+      userId,
+      year
+    );
+
+    // month with most entries ever for user
+    const monthWithMostEntriesEver = await stats.getMonthWithMostEntriesEver(
+      userId
+    );
+
+    // total days journaled for user
+    const totalDaysJournaled = await stats.getTotalDaysJournaled(userId);
+
+    // longest prompt on avg for user
+    // TO DO: where do we get the ...prompts param??? check in stats.js that part also
+    const longestPromptOnAvg = await stats.getLongestPromptOnAvg(userId);
+
+    // if successful, send them back (in what form?)
+    res.json({
+      monthWithMostEntriesYear,
+      monthWithMostEntriesEver,
+      totalDaysJournaled,
+      longestPromptOnAvg,
+    });
+  } catch (err) {
+    // display error in console
+    logger.error(err);
+    //set error status and send back response with error
+    res.status(500).send('Error retrieving stats', err);
+  }
+});
 
 module.exports = router;

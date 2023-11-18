@@ -23,7 +23,7 @@ const reminderEmailJob = () => {
 
       reminderEmailResults.forEach(promiseResult => {
         if (promiseResult.status === 'rejected') {
-          console.error(promiseResult.reason);
+          logger.error(promiseResult.reason);
         }
       });
     });

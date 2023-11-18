@@ -1,4 +1,6 @@
-const Entry = require('../models/Entry.model');
+// const Entry = require('../models/Entry.model');
+import { Entry } from '../models/Entry.model';
+import { entrySchema } from '../models/Entry.model';
 
 // 1. Month with the most entries of the year
 // userId param  needs === creator
@@ -47,7 +49,7 @@ const getMonthWithMostEntriesYear = async (userId, year) => {
     const aggrPipelineError = new Error(
       'Failed to fetch data. Please try again later.'
     );
-    console.error(aggrPipelineError);
+    logger.error(aggrPipelineError);
   }
 };
 // 2. Month with the most entries, ever
@@ -81,7 +83,7 @@ const getMonthWithMostEntriesEver = async userId => {
     const aggrPipelineError = new Error(
       'Failed to fetch data. Please try again later.'
     );
-    console.error(aggrPipelineError);
+    logger.error(aggrPipelineError);
     throw aggrPipelineError;
   }
 };
@@ -102,7 +104,7 @@ const getTotalDaysJournaled = async userId => {
     const aggrPipelineError = new Error(
       'Failed to fetch data. Please try again later.'
     );
-    console.error(aggrPipelineError);
+    logger.error(aggrPipelineError);
     throw aggrPipelineError;
   }
 };
@@ -110,14 +112,13 @@ const getTotalDaysJournaled = async userId => {
 // 4. Longest prompt on average, per user
 
 // get the avg length for whatever prompt is passed, for that user
-const getPromptAvgLength = async (userId, prompt) => {
+const getPromptAvgLength = async (userId, promptName) => {
   try {
     const promptLengthsAggregatedData = await Entry.aggregate([
       {
         $match: {
           creator: userId,
-          // $and: [{ prompt: { $ne: '' } }, { prompt: { $eq: prompt } }],
-          prompt: { $eq: prompt, $ne: '' },
+          $expr: { $ne: [`$${promptName}`, ''] },
         },
       },
       {
@@ -145,50 +146,73 @@ const getPromptAvgLength = async (userId, prompt) => {
       );
     return promptLengthsAggregatedData[0].averagePromptLength;
   } catch (err) {
-    console.error(err.message);
+    logger.error(err.message);
     throw new Error(
       `Failed to fetch data for the ${prompt}. Please try again later`
     );
   }
 };
 
-// (...prompts) needs to be the array of all types of prompt that exist in the app, therefore in Entry.model (still need to work on this part - maybe it could be a global variable?). I removed the userId param because when we call getPromptAvgLength, we are already passing userId and filtering for entries created by the current user - right or wrong?
-const getPromptLengthsArray = async (...globalPrompts) => {
-  // This is a one line function, i dont think it makes sense to spin into its own separate function.
-  const promptLengthPromises = globalPrompts.map(prompt =>
-    getPromptAvgLength(prompt)
-  );
-  // console.log(promptAverageLengths);
+const buildPromptArray = (promisesResults, promptNames) => {
+  return promptNames.map((promptName, i) => {
+    const result = promisesResults[i];
+    if (result.status === 'fulfilled') {
+      return {
+        promptName,
+        promptAvgLength: result.value,
+      };
+    } else {
+      logger.error(`Error with prompt ${promptName}: `, result.reason);
+      return null;
+    }
+  });
+};
 
-  // Gives us array of objects. Every object is the result of 1 promise. This is a one line function, i dont think it makes sense to spin into its own separate function
+const getPromptLengthsArray = async userId => {
+  const promptNames = ['focusPrompt', 'gratefulPrompt', 'letGoPrompt'];
+  const promptLengthPromises = promptNames.map(promptName =>
+    getPromptAvgLength(userId, promptName)
+  );
   const promisesResults = await Promise.allSettled(promptLengthPromises);
 
-  // Guard clause in case one of the promises fails. This loop is just throwing an error if there's a fail scenario, don't think i need to spin it into its own function.
-  for (const result of promisesResults) {
-    if (result.status === 'rejected') {
-      const err = new Error(
-        'It seems like we had an issues with the database. Please try again later'
-      );
-      console.error(err);
-      throw err;
-    }
-  }
+  const promptAverageLengths = buildPromptArray(promisesResults, promptNames);
 
-  // Maybe I could spin this into its own function, since it builds the array with the values of the avg lengths and the prompt names. Thoughts?
-
-  return buildPromptArray(promisesResults);
+  return promptAverageLengths.filter(prompt => prompt !== null);
 };
 
-const buildPromptArray = promisesResults => {
-  const promptAverageLengths = [];
-  promisesResults.forEach((prompt, i) => {
-    promptAverageLengths.push({
-      promptName: prompt,
-      promptAvgLength: promisesResults[i].value,
-    });
-  });
-  return promptAverageLengths;
-};
+// const buildPromptArray = promisesResults => {
+//   const promptAverageLengths = [];
+//   promisesResults.forEach((prompt, i) => {
+//     promptAverageLengths.push({
+//       promptName: prompt,
+//       promptAvgLength: promisesResults[i].value,
+//     });
+//   });
+//   return promptAverageLengths;
+// };
+
+// const getPromptLengthsArray = async userId => {
+//   const promptNames = ['focusPrompt', 'gratefulPrompt', 'letGoPrompt'];
+//   const promptLengthPromises = promptNames.map(promptName =>
+//     getPromptAvgLength(userId, promptName)
+//   );
+//   // logger.info(promptAverageLengths);
+
+//   // Gives us array of objects. Every object is the result of 1 promise. This is a one line function, i dont think it makes sense to spin into its own separate function
+//   const promisesResults = await Promise.allSettled(promptLengthPromises);
+
+//   // Guard clause in case one of the promises fails. This loop is just throwing an error if there's a fail scenario, don't think i need to spin it into its own function.
+//   for (const result of promisesResults) {
+//     if (result.status === 'rejected') {
+//       const err = new Error(
+//         'It seems like we had an issues with the database. Please try again later'
+//       );
+//       logger.error(err);
+//       throw err;
+//     }
+//   }
+//   return buildPromptArray(promisesResults);
+// };
 
 const checkMaxAvgLength = promptAverageLengths => {
   let maxAvgLength = 0;
@@ -203,24 +227,32 @@ const checkMaxAvgLength = promptAverageLengths => {
   return longestPrompt;
 };
 
-/// getLongestPromptOnAvg computes the avg length for all the prompts the user has written so far. Returns the prompt w the highest average
-const getLongestPromptOnAvg = async (...prompts) => {
+const getLongestPromptOnAvg = async userId => {
   try {
-    const promptLengthsArray = await getPromptLengthsArray(...prompts);
-    const longestPrompt = checkMaxAvgLength(promptLengthsArray);
-
-    if (!longestPrompt)
-      throw new Error(
-        'There are no prompts to show. Go journal and come back to see your stats.'
-      );
-
-    return longestPrompt;
+    const promptLengthsArray = await getPromptLengthsArray(userId);
+    return checkMaxAvgLength(promptLengthsArray);
   } catch (err) {
-    console.error(err);
+    logger.error('Error calculating the longest prompt.');
     throw err;
   }
 };
 
-getLongestPromptOnAvg();
+// /// getLongestPromptOnAvg computes the avg length for all the prompts the user has written so far. Returns the prompt w the highest average
+// const getLongestPromptOnAvg = async () => {
+//   try {
+//     const promptLengthsArray = await getPromptLengthsArray(prompts);
+//     const longestPrompt = checkMaxAvgLength(promptLengthsArray);
 
-module.exports = stats;
+//     if (!longestPrompt)
+//       throw new Error(
+//         'There are no prompts to show. Go journal and come back to see your stats.'
+//       );
+
+//     return longestPrompt;
+//   } catch (err) {
+//     logger.error(err);
+//     throw err;
+//   }
+// };
+
+export default stats;

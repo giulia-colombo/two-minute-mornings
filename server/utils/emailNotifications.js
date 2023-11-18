@@ -12,13 +12,13 @@ const _sendEmail = emailDetails => {
 
   // REVIEW is the below a higher-order function - since it returns a function?
   return apiInstance.sendTransacEmail(emailDetails).catch(err => {
-    console.error('Error sending email: ', err);
+    logger.error('Error sending email: ', err);
     throw err;
   });
 };
 
 const sendReminderEmail = (toEmail, userName) => {
-  console.log(`Sending reminder email to ${toEmail} with name ${userName}`);
+  logger.info(`Sending reminder email to ${toEmail} with name ${userName}`);
 
   const reminderEmailConfig = {
     subject: `${userName}, you forgot something...`,
@@ -31,7 +31,7 @@ const sendReminderEmail = (toEmail, userName) => {
 };
 
 const sendWelcomeEmail = (toEmail, userName) => {
-  console.log(`Sending welcome email to ${toEmail} with name ${userName}`);
+  logger.info(`Sending welcome email to ${toEmail} with name ${userName}`);
 
   const welcomeEmailConfig = {
     subject: 'Welcome to Two Minute Mornings 📔',

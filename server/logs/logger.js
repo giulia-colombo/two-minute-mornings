@@ -1,48 +1,119 @@
-// const morgan = require("morgan");
-// const fs = require("fs");
-// const path = require("path");
+import { createLogger, format, transports } from 'winston';
 
-// let accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"))
+//TO DO
+// use environment variable for "level"
+// handle uncaught exceptions
+// handle uncaught promise rejections
 
-// //the format fn will be called with 3 args: tokens, req, res where tokens -->  object with all defined tokens
-// //the format fn needs to return a string that will be the log line, or undefined / null to skip logging
+// FROM GITHUB/EXAMPLES/QUICKSTART
 
-// //morgan.token needs to be invoked with the name and a cb function. The cb function is expected to return a string value.
-// // define userId token
-// morgan.token("userId", (req, res) => {
-//   return req.user && req.user.id ? req.user.id : "-";
+const logger = createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  format: format.combine(
+    format.timestamp({
+      format: 'DD-MM-YYYY HH:mm:ss',
+    }),
+    format.errors({ stack: true }),
+    format.splat(),
+    format.json(),
+    format.align(),
+    format.printf(info => `[${info.timestamp}] ${info.level}: ${info.message}`)
+  ),
+  defaultMeta: { service: 'your-service-name' },
+  transports: [
+    //
+    // - Write all logs with level `info` and below to `quick-start-combined.log`.
+    new transports.File({ filename: 'error.log', level: 'error' }),
+    // - Write all logs error (and below) to `quick-start-error.log`.
+    new transports.File({ filename: 'combined.log' }),
+
+    //NOTE we are not writing logs with a level less serious than "info"
+    //
+  ],
+  exceptionHandlers: [
+    new winston.transports.File({ filename: 'exception.log' }),
+  ],
+  rejectionHandlers: [
+    new winston.transports.File({ filename: 'rejections.log' }),
+  ],
+});
+
+//
+// If we're not in production then **ALSO** log to the `console`
+// with the colorized simple format.
+//
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new transports.Console({
+      format: format.combine(format.colorize(), format.simple()),
+      handleExceptions: true,
+      handleRejections: true,
+    })
+  );
+}
+
+// ***************
+// Allows for JSON logging
+// ***************
+
+// logger.log({
+//   level: 'info',
+//   message: 'Pass an object and this works',
+//   additional: 'properties',
+//   are: 'passed along',
 // });
 
-// //define token: ISO date of each log entry
-// morgan.token("isoDate", (req, res) => {
-//   const createdAtDate = req.body.createdAt
-//   const createdAtString = createdAtDate.toISOString()
-//   return req.body && createdAtDate ? createdAtString : "-"
-// })
+// logger.info({
+//   message: 'Use a helper method if you want',
+//   additional: 'properties',
+//   are: 'passed along',
+// });
 
-// //define token: prompt length of each entry
-// //
-// morgan.token("focusPromptLength", (req, res) => {
-//   return req.body && req.body.focusPrompt ? req.body.focusPrompt.length : "-"
-// })
+// ***************
+// Allows for parameter-based logging
+// ***************
 
-// morgan.token("gratefulPromptLength", (req, res) => {
-//   return req.body && req.body.gratefulPrompt ? req.body.gratefulPrompt.length : "-"
-// })
+// logger.log('info', 'Pass a message and this works', {
+//   additional: 'properties',
+//   are: 'passed along',
+// });
 
-// morgan.token("letGoPromptLength", (req, res) => {
-//   return req.body && req.body.letGoPrompt ? req.body.letGoPrompt.length : "-"
-// })
+// logger.info('Use a helper method if you want', {
+//   additional: 'properties',
+//   are: 'passed along',
+// });
 
-// //define token: message
-// morgan.token("message", (req, res) => {
-//   //we need to capture whenever the user creates an entry (doesn't have to be a full 3 prompt, any writing activity is good)
-//   return req.method ==="POST" && req.url === "/entries" ? "blogged" : "-";
-// })
+// // ***************
+// // Allows for string interpolation
+// // ***************
 
-// morgan(`:remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
-//  "userId" "isoDate" "focusPromptLength" "gratefulPromptLength" "letGoPromptLength" "message"`, {stream: accessLogStream});
+// // info: test message my string {}
+// logger.log('info', 'test message %s', 'my string');
 
+// // info: test message 123 {}
+// logger.log('info', 'test message %d', 123);
 
+// // info: test message first second {number: 123}
+// logger.log('info', 'test message %s, %s', 'first', 'second', { number: 123 });
 
-// module.exports = morgan;
+// // prints "Found error at %s"
+// logger.info('Found %s at %s', 'error', new Date());
+// logger.info('Found %s at %s', 'error', new Error('chill winston'));
+// logger.info('Found %s at %s', 'error', /WUT/);
+// logger.info('Found %s at %s', 'error', true);
+// logger.info('Found %s at %s', 'error', 100.0);
+// logger.info('Found %s at %s', 'error', ['1, 2, 3']);
+
+// // ***************
+// // Allows for logging Error instances
+// // ***************
+
+// logger.warn(new Error('Error passed as info'));
+// logger.log('error', new Error('Error passed as message'));
+
+// logger.warn('Maybe important error: ', new Error('Error passed as meta'));
+// logger.log('error', 'Important error: ', new Error('Error passed as meta'));
+
+// logger.error(new Error('Error as info'));
+
+export default logger;

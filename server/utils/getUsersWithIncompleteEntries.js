@@ -7,7 +7,7 @@ const getAllUsers = async () => {
   try {
     return await User.find(); // returns an array of User documents (JS objects), instances of the User mongoose model satisfying the conditions ✅
   } catch (err) {
-    console.error('Error getting all users from the database.');
+    logger.error('Error getting all users from the database.');
     throw new Error('Error getting all users from the database.');
   }
 };
@@ -21,7 +21,7 @@ const getUsersWithNoEntries = async () => {
     );
     return usersWithNoEntries; // returns an array of User documents (JS objects), instances of the User mongoose model satisfying the conditions ✅
   } catch (error) {
-    console.error('Error fetching users with no entries.');
+    logger.error('Error fetching users with no entries.');
     throw new Error('Error fetching users with no entries.');
   }
 };
@@ -51,7 +51,7 @@ const checkIfCompletedEntryToday = async user => {
 
     // if completedEntryToday DOES NOT exist, return the user aka creator of that entry... but how can I, if the post entry doesnt exist, neither will the creator attached to it?
   } catch (err) {
-    console.error("Error finding today's entry");
+    logger.error("Error finding today's entry");
     throw new Error("Error finding today's entry");
   }
 };
@@ -76,10 +76,10 @@ const getUsersWithIncompleteEntryToday = async () => {
       .filter(result => result.status === 'fulfilled' && result.value != null)
       .map(result => result.value);
 
-    console.log('usersWithIncompleteEntry', usersWithIncompleteEntry);
+    logger.info('usersWithIncompleteEntry', usersWithIncompleteEntry);
     return usersWithIncompleteEntry;
   } catch (err) {
-    console.error('Error in getUsersWithIncompleteEntryToday', err);
+    logger.error('Error in getUsersWithIncompleteEntryToday', err);
     throw err;
   }
 };
@@ -95,10 +95,10 @@ export const getUsersWithIncompleteEntries = async () => {
       ...usersWithNoEntries,
     ];
 
-    console.log(`usersWithIncompleteEntries: `, usersWithIncompleteEntries);
+    logger.info(`usersWithIncompleteEntries: `, usersWithIncompleteEntries);
 
     return usersWithIncompleteEntries;
   } catch (error) {
-    console.error('Error getting the users with incomplete entries:', err);
+    logger.error('Error getting the users with incomplete entries:', err);
   }
 };

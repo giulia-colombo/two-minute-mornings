@@ -1,3 +1,10 @@
+process.on('uncaughtException', (err, origin) =>
+  logger.error(`Caught exception: ${err}. Exception origin: ${origin}`)
+);
+process.on('unhandledRejection', (reason, promise) =>
+  logger.error(`Unhandled rejection at ${promise}. Reason: ${reason}`)
+);
+
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require('dotenv').config();
@@ -32,7 +39,9 @@ app.use('/api', isAuthenticated, userRoutes);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
 
+import { Logger } from 'winston';
 import { reminderEmailJob } from './cron-jobs/reminderEmailJob';
+import logger from './logs/logger';
 reminderEmailJob();
 
 module.exports = app;
