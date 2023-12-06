@@ -1,7 +1,8 @@
-const { expressjwt: jwt } = require('express-jwt');
+// const { expressjwt: jwt } = require('express-jwt');
+import { expressjwt as jwt } from 'express-jwt';
 
 // Instantiate the JWT token validation middleware
-const isAuthenticated = jwt({
+export const isAuthenticated = jwt({
   secret: process.env.TOKEN_SECRET,
   algorithms: ['HS256'],
   requestProperty: 'payload', //make the decoded JWT available on req.payload vs req.user
@@ -25,6 +26,6 @@ function getTokenFromHeaders(req) {
 }
 
 // Export the middleware so that we can use it to create protected routes
-module.exports = {
-  isAuthenticated,
-};
+// module.exports = {
+//   isAuthenticated,
+// };

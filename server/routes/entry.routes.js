@@ -1,9 +1,21 @@
-const router = require('express').Router();
-// const mongoose = require('mongoose');
-const Entry = require('../models/Entry.model');
-const User = require('../models/User.model');
-const { isAuthenticated } = require('../middleware/jwt.middleware');
-import stats from '../stats/stats.js';
+import logger from '../logs/logger.js';
+
+// const router = require('express').Router();
+import express from 'express';
+const router = express.Router();
+
+// const Entry = require('../models/Entry.model');
+import { Entry } from '../models/Entry.model.js';
+// const User = require('../models/User.model');
+import { User } from '../models/User.model.js';
+// const { isAuthenticated } = require('../middleware/jwt.middleware');
+import { isAuthenticated } from '../middleware/jwt.middleware.js';
+import {
+  getMonthWithMostEntriesYear,
+  getMonthWithMostEntriesEver,
+  getTotalDaysJournaled,
+  getLongestPromptOnAvg,
+} from '../stats/stats.js';
 
 // GET /api/entries
 router.get('/entries', isAuthenticated, async (req, res, next) => {
@@ -137,7 +149,7 @@ router.get('/entries', isAuthenticated, async (req, res) => {
 });
 
 // GET - stats page for the user.
-router.get('entries/stats', isAuthenticated, async (req, res) => {
+router.get('/entries/stats', isAuthenticated, async (req, res) => {
   const userId = req.payload._id;
   const { year } = req.query;
 
@@ -148,22 +160,25 @@ router.get('entries/stats', isAuthenticated, async (req, res) => {
 
     // month with most entries for a year for user
     // TO DO: where do we get the year param?
-    const monthWithMostEntriesYear = await stats.getMonthWithMostEntriesYear(
-      userId,
-      year
-    );
+
+    let monthWithMostEntriesYear = null;
+
+    if (year) {
+      monthWithMostEntriesYear = await getMonthWithMostEntriesYear(
+        userId,
+        year
+      );
+    }
 
     // month with most entries ever for user
-    const monthWithMostEntriesEver = await stats.getMonthWithMostEntriesEver(
-      userId
-    );
+    const monthWithMostEntriesEver = await getMonthWithMostEntriesEver(userId);
 
     // total days journaled for user
-    const totalDaysJournaled = await stats.getTotalDaysJournaled(userId);
+    const totalDaysJournaled = await getTotalDaysJournaled(userId);
 
     // longest prompt on avg for user
     // TO DO: where do we get the ...prompts param??? check in stats.js that part also
-    const longestPromptOnAvg = await stats.getLongestPromptOnAvg(userId);
+    const longestPromptOnAvg = await getLongestPromptOnAvg(userId);
 
     // if successful, send them back (in what form?)
     res.json({
@@ -180,4 +195,4 @@ router.get('entries/stats', isAuthenticated, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

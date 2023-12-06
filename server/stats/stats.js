@@ -1,10 +1,10 @@
+import logger from '../logs/logger.js';
 // const Entry = require('../models/Entry.model');
-import { Entry } from '../models/Entry.model';
-import { entrySchema } from '../models/Entry.model';
+import { Entry } from '../models/Entry.model.js';
 
 // 1. Month with the most entries of the year
 // userId param  needs === creator
-const getMonthWithMostEntriesYear = async (userId, year) => {
+export const getMonthWithMostEntriesYear = async (userId, year) => {
   try {
     const results = await Entry.aggregate([
       {
@@ -53,7 +53,7 @@ const getMonthWithMostEntriesYear = async (userId, year) => {
   }
 };
 // 2. Month with the most entries, ever
-const getMonthWithMostEntriesEver = async userId => {
+export const getMonthWithMostEntriesEver = async userId => {
   try {
     const results = await Entry.aggregate([
       {
@@ -91,7 +91,7 @@ const getMonthWithMostEntriesEver = async userId => {
 // 3. Total days journaled, ever
 // Answers the question: "How many unique Entries are there, based on the "createdAt" field?
 
-const getTotalDaysJournaled = async userId => {
+export const getTotalDaysJournaled = async userId => {
   try {
     const uniqueEntries = await Entry.distinct('createdAt', {
       creator: userId,
@@ -227,7 +227,7 @@ const checkMaxAvgLength = promptAverageLengths => {
   return longestPrompt;
 };
 
-const getLongestPromptOnAvg = async userId => {
+export const getLongestPromptOnAvg = async userId => {
   try {
     const promptLengthsArray = await getPromptLengthsArray(userId);
     return checkMaxAvgLength(promptLengthsArray);
@@ -254,5 +254,3 @@ const getLongestPromptOnAvg = async userId => {
 //     throw err;
 //   }
 // };
-
-export default stats;

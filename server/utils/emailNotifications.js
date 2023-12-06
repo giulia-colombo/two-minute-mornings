@@ -1,5 +1,6 @@
-// const { config } = require('dotenv');
-const SibApiV3Sdk = require('sib-api-v3-sdk'); // NOTE this might not work since SIB name changed to Brevo
+import logger from '../logs/logger.js';
+// const SibApiV3Sdk = require('sib-api-v3-sdk');
+import SibApiV3Sdk from 'sib-api-v3-sdk'; // NOTE this might not work since SIB name changed to Brevo
 // TO DO: pass down user details (use jwt middleware?)
 
 const _sendEmail = emailDetails => {
@@ -17,7 +18,7 @@ const _sendEmail = emailDetails => {
   });
 };
 
-const sendReminderEmail = (toEmail, userName) => {
+export const sendReminderEmail = (toEmail, userName) => {
   logger.info(`Sending reminder email to ${toEmail} with name ${userName}`);
 
   const reminderEmailConfig = {
@@ -30,7 +31,7 @@ const sendReminderEmail = (toEmail, userName) => {
   _sendEmail(reminderEmailDetails);
 };
 
-const sendWelcomeEmail = (toEmail, userName) => {
+export const sendWelcomeEmail = (toEmail, userName) => {
   logger.info(`Sending welcome email to ${toEmail} with name ${userName}`);
 
   const welcomeEmailConfig = {
@@ -62,8 +63,6 @@ const createEmailDetails = ({ subject, htmlContent, userName, toEmail }) => {
 
   return emailDetails;
 };
-
-export default emailNotifications;
 
 // module.exports = {
 //   sendReminderEmail,

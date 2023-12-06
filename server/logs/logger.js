@@ -30,12 +30,8 @@ const logger = createLogger({
     //NOTE we are not writing logs with a level less serious than "info"
     //
   ],
-  exceptionHandlers: [
-    new winston.transports.File({ filename: 'exception.log' }),
-  ],
-  rejectionHandlers: [
-    new winston.transports.File({ filename: 'rejections.log' }),
-  ],
+  exceptionHandlers: [new transports.File({ filename: 'exception.log' })],
+  rejectionHandlers: [new transports.File({ filename: 'rejections.log' })],
 });
 
 //

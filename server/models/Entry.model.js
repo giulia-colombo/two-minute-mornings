@@ -13,8 +13,7 @@ const entrySchema = new Schema(
   }
 );
 
-const Entry = model('Entry', entrySchema);
+export const Entry = model('Entry', entrySchema);
 
 // module.exports = Entry;
-
-export { Entry, entrySchema };
+// export { Entry, entrySchema };

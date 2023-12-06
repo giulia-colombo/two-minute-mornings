@@ -1,4 +1,6 @@
-module.exports = app => {
+import logger from '../logs/logger.js';
+
+export default app => {
   app.use((req, res, next) => {
     // this middleware runs whenever requested page is not available
     res.status(404).json({ message: 'This route does not exist' });

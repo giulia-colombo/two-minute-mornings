@@ -1,7 +1,8 @@
-import { AbTestCampaignResultStatistics } from 'sib-api-v3-sdk';
-
-const User = require('../models/User.model');
-const Entry = require('../models/Entry.model');
+// const User = require('../models/User.model');
+// const Entry = require('../models/Entry.model');
+import { User } from '../models/User.model.js';
+import { Entry } from '../models/Entry.model.js';
+import logger from '../logs/logger.js';
 
 const getAllUsers = async () => {
   try {

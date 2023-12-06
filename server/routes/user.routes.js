@@ -1,7 +1,15 @@
-const router = require('express').Router();
-const mongoose = require('mongoose');
-const User = require('../models/User.model');
-const Entry = require('../models/Entry.model');
+import logger from '../logs/logger.js';
+
+// const router = require('express').Router();
+import express from 'express';
+const router = express.Router();
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
+// const User = require('../models/User.model');
+import { User } from '../models/User.model.js';
+// const Entry = require('../models/Entry.model');
+import { Entry } from '../models/Entry.model.js';
 
 //GET - display profile of 1 member
 router.get('/users/:userId', (req, res, next) => {
@@ -20,4 +28,5 @@ router.get('/users/:userId', (req, res, next) => {
   }
 });
 
-module.exports = router;
+// module.exports = router;
+export default router;

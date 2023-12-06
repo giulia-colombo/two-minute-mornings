@@ -1,9 +1,10 @@
-import { getUsersWithIncompleteEntries } from '../utils/getUsersWithIncompleteEntries';
+import { getUsersWithIncompleteEntries } from '../utils/getUsersWithIncompleteEntries.js';
 import schedule from 'node-schedule';
-import emailNotifications from '../utils/notifications/emailNotifications';
+import { sendReminderEmail } from '../utils/emailNotifications.js';
+import logger from '../logs/logger.js';
 // TO DO: we need to pass down user.email and user.name
 
-const reminderEmailJob = () => {
+export const reminderEmailJob = () => {
   // REVIEW naming
   //at 8pm send email to these users inviting them to fill in the prompts
   //create cron job for 8 pm every day
@@ -14,7 +15,7 @@ const reminderEmailJob = () => {
       // TO DO: sendReminderEmail is async, we need to handle errors
       // we need a promise combinator bc we want to perform an async action on several elements
       const reminderEmailPromises = usersWithIncompleteEntries.map(user =>
-        emailNotifications.sendReminderEmail(user.email, user.name)
+        sendReminderEmail(user.email, user.name)
       );
 
       const reminderEmailResults = await Promise.allSettled(
@@ -30,5 +31,3 @@ const reminderEmailJob = () => {
 
   scheduleReminderEmails();
 };
-
-export { reminderEmailJob };

@@ -1,0 +1,23 @@
+[01-12-2023 17:41:48] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:45:26] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:45:26] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:45:34] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:45:34] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:45:42] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:45:42] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:46:20] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:46:20] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:46:22] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:46:22] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:46:41] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:46:41] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:46:56] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:46:56] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 17:47:00] info: 	Server listening on http://localhost:5005
+[01-12-2023 17:47:00] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[01-12-2023 18:06:19] error: 	ERROR
+[01-12-2023 18:06:49] info: 	req.payload
+[01-12-2023 18:23:25] info: 	req.payload
+[01-12-2023 18:30:49] info: 	req.payload
+[01-12-2023 18:32:06] info: 	req.body ===> 
+[01-12-2023 18:39:08] info: 	req.body ===> 

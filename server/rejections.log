@@ -1,0 +1,28 @@
+[01-12-2023 17:39:45] error: 	uncaughtException: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/models/User.model.js:1:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+[01-12-2023 17:40:09] error: 	uncaughtException: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/models/User.model.js:1:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+[01-12-2023 17:41:48] error: 	uncaughtException: stats is not defined
+ReferenceError: stats is not defined
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/stats/stats.js:258:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
