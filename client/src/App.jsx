@@ -1,25 +1,25 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-// import DiaryPage from "./pages/DiaryPage/DiaryPage.jsx"
-import DiaryPage2 from "./pages/DiaryPage2/DiaryPage2"
-import TodayPage from "./pages/TodayPage/TodayPage.jsx"
-import StatsPage from "./pages/StatsPage/StatsPage.jsx"
+import HomePage from './pages/HomePage/HomePage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import SignupPage from './pages/SignupPage/SignupPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import DiaryPage from './pages/DiaryPage/DiaryPage.jsx';
+// import DiaryPage2 from "./pages/DiaryPage2/DiaryPage2"
+import TodayPage from './pages/TodayPage/TodayPage.jsx';
+import StatsPage from './pages/StatsPage/StatsPage.jsx';
 
-import Navbar from "./components/Navbar/Navbar";
-import IsPrivate from "./components/IsPrivate/IsPrivate";
-import IsAnon from "./components/IsAnon/IsAnon";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Navbar from './components/Navbar/Navbar';
+import IsPrivate from './components/IsPrivate/IsPrivate';
+import IsAnon from './components/IsAnon/IsAnon';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Sidebar/>
+      <Sidebar />
       <Routes>
         <Route index element={<HomePage />} />
 
@@ -53,25 +53,25 @@ function App() {
           path="/diary"
           element={
             <IsPrivate>
-              <DiaryPage2/>
+              <DiaryPage />
             </IsPrivate>
           }
         />
 
-          <Route
+        <Route
           path="/today"
           element={
             <IsPrivate>
-              <TodayPage/>
-            </IsPrivate> 
+              <TodayPage />
+            </IsPrivate>
           }
         />
 
-          <Route
+        <Route
           path="/stats"
           element={
             <IsPrivate>
-              <StatsPage/>
+              <StatsPage />
             </IsPrivate>
           }
         />

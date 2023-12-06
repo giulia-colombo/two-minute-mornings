@@ -25,7 +25,6 @@ const PromptInput = () => {
       gratefulPrompt,
       letGoPrompt,
     };
-    // console.logging data as a placeholder - need to send it to backend server
 
     try {
       const response = await entryService.createOne(newEntry);
@@ -37,7 +36,7 @@ const PromptInput = () => {
       setGratefulPrompt('');
       setLetGoPrompt('');
     } catch (err) {
-      console.error('Error saving the entry: ', err);
+      console.log('Error saving the entry: ', err);
       setError('Failed to save the entry. Please try again.');
     }
   };

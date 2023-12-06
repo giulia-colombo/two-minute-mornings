@@ -1,36 +1,40 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-const API_URL = "http://localhost:5005";
+// import axios from "axios";
+import { useEffect, useState } from 'react';
+import authService from '../../services/auth.service';
+import { API_ENDPOINTS } from '../../config';
 
 function DiaryPage() {
   const [entries, setEntries] = useState([]);
+  const [error, setError] = useState(null);
 
   const getAllEntries = () => {
     console.log(`getAllEntries called!!!!`);
-    
-    axios
-      .get(`${API_URL}/api/entries/`)
-      .then(response => {
-        // console.log(`response stauts`, response.status);
-        // console.log(`response headers`, response.headers);
-        console.log(`response.data`, response.data);
-        
-        setEntries(response.data);
+
+    authService.api
+      .get(API_ENDPOINTS.entries)
+      .then(res => {
+        console.log('res.data', res.data);
+        setEntries(res.data);
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => {
+        setError('Failed to load entries');
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     getAllEntries();
   }, []);
 
-    return (
-      <div className="DiaryPage">
-        <h1>Diary page</h1>
-        
-        {/* mapping over the state variable "entries" */}
-        {entries && entries.map(entry => {
+  return (
+    <div className="DiaryPage">
+      <h1>Diary page</h1>
+
+      {error && <div className="error">{error}</div>}
+
+      {/* mapping over the state variable "entries" */}
+      {entries &&
+        entries.map(entry => {
           return (
             <div className="Entry" key={entry._id}>
               {/* display Entry here */}
@@ -41,11 +45,10 @@ function DiaryPage() {
               <h4>I will let go of...</h4>
               <p>{entry.letGoPrompt}</p>
             </div>
-          )
+          );
         })}
+    </div>
+  );
+}
 
-      </div>
-    );
-  }
-  
-  export default DiaryPage;
+export default DiaryPage;
