@@ -4,6 +4,7 @@ import { Entry } from '../models/Entry.model.js';
 
 // 1. Month with the most entries of the year
 // userId param  needs === creator
+// REVIEW: wont include this in frontend
 export const getMonthWithMostEntriesYear = async (userId, year) => {
   try {
     const results = await Entry.aggregate([

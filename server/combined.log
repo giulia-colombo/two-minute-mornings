@@ -21,3 +21,47 @@
 [01-12-2023 18:30:49] info: 	req.payload
 [01-12-2023 18:32:06] info: 	req.body ===> 
 [01-12-2023 18:39:08] info: 	req.body ===> 
+[12-12-2023 17:06:19] info: 	Server listening on http://localhost:5005
+[12-12-2023 17:06:19] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[12-12-2023 17:06:34] error: 	ERROR
+[12-12-2023 20:25:58] info: 	usersWithIncompleteEntry
+[12-12-2023 20:25:58] info: 	usersWithIncompleteEntries: 
+[12-12-2023 20:25:58] info: 	Sending reminder email to lorena@test.com with name Lorena
+[12-12-2023 20:25:58] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[12-12-2023 20:25:58] info: 	Sending reminder email to julia.@test.com with name Julia
+[12-12-2023 20:25:58] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[12-12-2023 20:25:58] info: 	Sending reminder email to roberto@test.com with name Roberto
+[12-12-2023 20:25:58] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[12-12-2023 20:25:58] info: 	Sending reminder email to julia.@test.com with name Julia
+[12-12-2023 20:25:58] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[12-12-2023 20:25:58] info: 	Sending reminder email to roberto@test.com with name Roberto
+[18-12-2023 16:00:22] info: 	Server listening on http://localhost:5005
+[18-12-2023 16:00:22] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-12-2023 16:00:51] error: 	ERROR
+[18-12-2023 20:20:01] info: 	usersWithIncompleteEntry
+[18-12-2023 20:20:01] info: 	usersWithIncompleteEntries: 
+[18-12-2023 20:20:01] info: 	Sending reminder email to lorena@test.com with name Lorena
+[18-12-2023 20:20:01] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[18-12-2023 20:20:01] info: 	Sending reminder email to julia.@test.com with name Julia
+[18-12-2023 20:20:01] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[18-12-2023 20:20:01] info: 	Sending reminder email to roberto@test.com with name Roberto
+[18-12-2023 20:20:01] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[18-12-2023 20:20:01] info: 	Sending reminder email to julia.@test.com with name Julia
+[18-12-2023 20:20:01] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[18-12-2023 20:20:01] info: 	Sending reminder email to roberto@test.com with name Roberto
+[19-12-2023 18:04:47] info: 	Server listening on http://localhost:5005
+[19-12-2023 18:04:47] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-12-2023 18:04:56] error: 	ERROR
+[19-12-2023 18:04:58] error: 	ERROR
+[19-12-2023 18:05:08] info: 	req.payload
+[19-12-2023 18:06:02] info: 	req.payload
+[19-12-2023 18:08:16] info: 	Server listening on http://localhost:5005
+[19-12-2023 18:08:16] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-12-2023 18:13:08] info: 	Server listening on http://localhost:5005
+[19-12-2023 18:13:08] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-12-2023 19:26:28] info: 	creatorId ==> 
+[19-12-2023 19:26:28] info: 	foundUser ===> 
+[19-12-2023 19:32:09] info: 	creatorId ==> 
+[19-12-2023 19:32:09] info: 	foundUser ===> 
+[19-12-2023 19:32:22] info: 	creatorId ==> 
+[19-12-2023 19:32:22] info: 	foundUser ===> 

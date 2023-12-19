@@ -151,7 +151,7 @@ router.get('/entries', isAuthenticated, async (req, res) => {
 // GET - stats page for the user.
 router.get('/entries/stats', isAuthenticated, async (req, res) => {
   const userId = req.payload._id;
-  const { year } = req.query;
+  // const { year } = req.query;
 
   try {
     // display the values resulting from our metric calculations
@@ -161,14 +161,14 @@ router.get('/entries/stats', isAuthenticated, async (req, res) => {
     // month with most entries for a year for user
     // TO DO: where do we get the year param?
 
-    let monthWithMostEntriesYear = null;
+    // let monthWithMostEntriesYear = null;
 
-    if (year) {
-      monthWithMostEntriesYear = await getMonthWithMostEntriesYear(
-        userId,
-        year
-      );
-    }
+    // if (year) {
+    //   monthWithMostEntriesYear = await getMonthWithMostEntriesYear(
+    //     userId,
+    //     year
+    //   );
+    // }
 
     // month with most entries ever for user
     const monthWithMostEntriesEver = await getMonthWithMostEntriesEver(userId);
@@ -182,7 +182,7 @@ router.get('/entries/stats', isAuthenticated, async (req, res) => {
 
     // if successful, send them back (in what form?)
     res.json({
-      monthWithMostEntriesYear,
+      // monthWithMostEntriesYear,
       monthWithMostEntriesEver,
       totalDaysJournaled,
       longestPromptOnAvg,
