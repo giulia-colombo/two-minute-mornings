@@ -45,6 +45,15 @@ class EntryService {
   deleteOne = async id => {
     return this.api.delete(`${ENTRY_BASE_URL}/${id}`);
   };
+
+  // GET /api/entries/stats
+  getStats = async year => {
+    const url = year
+      ? `${ENTRY_BASE_URL}/stats/?year=${year}`
+      : `${ENTRY_BASE_URL}/stats/`;
+
+    return this.api.get(url);
+  };
 }
 
 // Create one instance of the service
