@@ -1,8 +1,8 @@
-const SingleMetric = ({ metricValue, metricName }) => {
+const SingleMetric = ({ metricName, metricValue }) => {
   return (
     <div className="SingleMetric">
       <h2>{metricName}</h2>
-      <p>The metric is {metricValue}</p>
+      <p> {metricValue}</p>
     </div>
   );
 };
