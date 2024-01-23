@@ -22,24 +22,25 @@ function StatsPage() {
 
   return (
     <>
-      <div className="errorMessage">{error && error.message}</div>
+      {error && <div className="errorMessage">{error.message}</div>}
+      {metric && (
+        <div>
+          <h1>Stats page</h1>
 
-      <div>
-        <h1>Stats page</h1>
-
-        <SingleMetric
-          metricValue={metric && metric.monthWithMostEntriesEver}
-          metricName="Month with Most Entries Ever"
-        />
-        <SingleMetric
-          metricValue={metric && metric.totalDaysJournaled}
-          metricName="Total Days Journaled"
-        />
-        <SingleMetric
-          metricValue={metric && metric.longestPromptOnAvg}
-          metricName="Longest Prompt on Average"
-        />
-      </div>
+          <SingleMetric
+            metricValue={metric.monthWithMostEntriesEver}
+            metricName="Month with Most Entries Ever"
+          />
+          <SingleMetric
+            metricValue={metric.totalDaysJournaled}
+            metricName="Total Days Journaled"
+          />
+          <SingleMetric
+            metricValue={metric.longestPromptOnAvg}
+            metricName="Longest Prompt on Average"
+          />
+        </div>
+      )}
     </>
   );
 }

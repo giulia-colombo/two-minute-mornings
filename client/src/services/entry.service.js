@@ -48,11 +48,11 @@ class EntryService {
 
   // GET /api/entries/stats
   getStats = async year => {
-    const url = year
-      ? `${ENTRY_BASE_URL}/stats/?year=${year}`
-      : `${ENTRY_BASE_URL}/stats/`;
+    // const url = year
+    //   ? `${ENTRY_BASE_URL}/stats/?year=${year}`
+    //   : `${ENTRY_BASE_URL}/stats`;
 
-    return this.api.get(url);
+    return this.api.get(`${ENTRY_BASE_URL}/stats`);
   };
 }
 
