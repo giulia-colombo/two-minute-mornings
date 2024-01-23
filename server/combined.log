@@ -65,3 +65,118 @@
 [19-12-2023 19:32:09] info: 	foundUser ===> 
 [19-12-2023 19:32:22] info: 	creatorId ==> 
 [19-12-2023 19:32:22] info: 	foundUser ===> 
+[16-01-2024 12:32:58] info: 	Server listening on http://localhost:5005
+[16-01-2024 12:32:58] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[16-01-2024 12:33:01] error: 	ERROR
+[16-01-2024 12:33:13] info: 	req.payload
+[16-01-2024 12:33:25] info: 	creatorId ==> 
+[16-01-2024 12:33:25] info: 	foundUser ===> 
+[16-01-2024 12:52:07] info: 	creatorId ==> 
+[16-01-2024 12:52:07] info: 	foundUser ===> 
+[16-01-2024 12:57:51] info: 	req.payload
+[16-01-2024 12:57:51] info: 	creatorId ==> 
+[16-01-2024 12:57:51] info: 	foundUser ===> 
+[16-01-2024 13:18:57] info: 	req.payload
+[16-01-2024 13:18:57] info: 	creatorId ==> 
+[16-01-2024 13:18:57] info: 	foundUser ===> 
+[16-01-2024 13:19:04] info: 	req.payload
+[16-01-2024 13:19:04] info: 	creatorId ==> 
+[16-01-2024 13:19:04] info: 	foundUser ===> 
+[17-01-2024 16:14:04] info: 	Server listening on http://localhost:5005
+[17-01-2024 16:14:04] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[17-01-2024 16:14:16] error: 	ERROR
+[17-01-2024 16:14:51] error: 	ERROR
+[17-01-2024 16:15:12] info: 	req.payload
+[17-01-2024 16:16:58] info: 	creatorId ==> 
+[17-01-2024 16:16:58] info: 	foundUser ===> 
+[17-01-2024 16:35:55] info: 	creatorId ==> 
+[17-01-2024 16:35:55] info: 	foundUser ===> 
+[17-01-2024 16:36:38] info: 	creatorId ==> 
+[17-01-2024 16:36:38] info: 	foundUser ===> 
+[17-01-2024 16:36:54] info: 	req.payload
+[17-01-2024 16:36:56] info: 	creatorId ==> 
+[17-01-2024 16:36:56] info: 	foundUser ===> 
+[17-01-2024 18:39:54] info: 	req.payload
+[17-01-2024 18:39:54] info: 	creatorId ==> 
+[17-01-2024 18:39:54] info: 	foundUser ===> 
+[17-01-2024 20:14:19] info: 	usersWithIncompleteEntry
+[17-01-2024 20:14:19] info: 	usersWithIncompleteEntries: 
+[17-01-2024 20:14:19] info: 	Sending reminder email to lorena@test.com with name Lorena
+[17-01-2024 20:14:19] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[17-01-2024 20:14:19] info: 	Sending reminder email to julia.@test.com with name Julia
+[17-01-2024 20:14:19] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[17-01-2024 20:14:19] info: 	Sending reminder email to roberto@test.com with name Roberto
+[17-01-2024 20:14:19] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[17-01-2024 20:14:19] info: 	Sending reminder email to julia.@test.com with name Julia
+[17-01-2024 20:14:19] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[17-01-2024 20:14:19] info: 	Sending reminder email to roberto@test.com with name Roberto
+[18-01-2024 16:48:23] error: 	ERROR
+[18-01-2024 16:48:26] error: 	ERROR
+[18-01-2024 16:48:30] error: 	ERROR
+[18-01-2024 16:48:39] info: 	req.payload
+[18-01-2024 17:45:52] info: 	creatorId ==> 
+[18-01-2024 17:45:52] info: 	foundUser ===> 
+[18-01-2024 18:11:08] info: 	req.payload
+[18-01-2024 18:11:08] info: 	creatorId ==> 
+[18-01-2024 18:11:08] info: 	foundUser ===> 
+[18-01-2024 18:13:53] error: 	ERROR
+[18-01-2024 18:14:32] info: 	creatorId ==> 
+[18-01-2024 18:14:32] info: 	foundUser ===> 
+[19-01-2024 11:39:46] info: 	Server listening on http://localhost:5005
+[19-01-2024 11:39:46] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-01-2024 11:39:57] error: 	ERROR
+[19-01-2024 11:41:19] error: 	ERROR
+[19-01-2024 11:41:45] info: 	req.payload
+[19-01-2024 11:41:50] info: 	creatorId ==> 
+[19-01-2024 11:41:50] info: 	foundUser ===> 
+[19-01-2024 11:44:34] info: 	Server listening on http://localhost:5005
+[19-01-2024 11:44:34] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-01-2024 11:45:21] info: 	req.payload
+[19-01-2024 11:45:21] info: 	creatorId ==> 
+[19-01-2024 11:45:21] info: 	foundUser ===> 
+[19-01-2024 11:46:35] info: 	req.payload
+[19-01-2024 11:46:35] info: 	creatorId ==> 
+[19-01-2024 11:46:35] info: 	foundUser ===> 
+[19-01-2024 11:49:29] info: 	Server listening on http://localhost:5005
+[19-01-2024 11:49:29] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-01-2024 11:49:30] info: 	req.payload
+[19-01-2024 11:49:30] info: 	creatorId ==> 
+[19-01-2024 11:49:30] info: 	foundUser ===> 
+[19-01-2024 11:49:36] info: 	creatorId ==> 
+[19-01-2024 11:49:36] info: 	foundUser ===> 
+[19-01-2024 11:50:05] info: 	req.payload
+[19-01-2024 11:50:12] info: 	creatorId ==> 
+[19-01-2024 11:50:12] info: 	foundUser ===> 
+[19-01-2024 11:50:24] info: 	Server listening on http://localhost:5005
+[19-01-2024 11:50:24] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-01-2024 11:51:33] info: 	Server listening on http://localhost:5005
+[19-01-2024 11:51:33] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-01-2024 11:51:42] info: 	creatorId ==> 
+[19-01-2024 11:51:42] info: 	foundUser ===> 
+[19-01-2024 12:21:18] error: 	ERROR
+[19-01-2024 12:21:36] error: 	ERROR
+[19-01-2024 12:22:10] info: 	req.payload
+[19-01-2024 12:22:59] info: 	creatorId ==> 
+[19-01-2024 12:22:59] info: 	foundUser ===> 
+[19-01-2024 12:23:24] error: 	ERROR
+[19-01-2024 12:23:28] info: 	creatorId ==> 
+[19-01-2024 12:23:28] info: 	foundUser ===> 
+[19-01-2024 12:25:12] error: 	ERROR
+[19-01-2024 12:26:25] info: 	creatorId ==> 
+[19-01-2024 12:26:25] info: 	foundUser ===> 
+[19-01-2024 19:20:30] error: 	ERROR
+[19-01-2024 19:20:47] error: 	ERROR
+[19-01-2024 19:20:55] info: 	req.payload
+[19-01-2024 19:20:59] info: 	creatorId ==> 
+[19-01-2024 19:20:59] info: 	foundUser ===> 
+[19-01-2024 20:09:51] info: 	usersWithIncompleteEntry
+[19-01-2024 20:09:51] info: 	usersWithIncompleteEntries: 
+[19-01-2024 20:09:51] info: 	Sending reminder email to lorena@test.com with name Lorena
+[19-01-2024 20:09:51] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[19-01-2024 20:09:51] info: 	Sending reminder email to julia.@test.com with name Julia
+[19-01-2024 20:09:51] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[19-01-2024 20:09:51] info: 	Sending reminder email to roberto@test.com with name Roberto
+[19-01-2024 20:09:51] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[19-01-2024 20:09:51] info: 	Sending reminder email to julia.@test.com with name Julia
+[19-01-2024 20:09:51] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[19-01-2024 20:09:51] info: 	Sending reminder email to roberto@test.com with name Roberto

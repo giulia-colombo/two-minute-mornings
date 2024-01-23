@@ -150,43 +150,47 @@ router.get('/entries', isAuthenticated, async (req, res) => {
 
 // GET - stats page for the user.
 router.get('/entries/stats', isAuthenticated, async (req, res) => {
+  logger.info("GET request to '/entries/stats' ");
+  logger.info(`req.path: `, req.path);
+  logger.info(`req.baseUrl`, req.baseUrl);
   const userId = req.payload._id;
   // const { year } = req.query;
 
   try {
-    // display the values resulting from our metric calculations
-    //import stats.js file
-    //call the respective functions for every stat and assign them to a variable
+    res.send('Stats route reached');
+    // // display the values resulting from our metric calculations
+    // //import stats.js file
+    // //call the respective functions for every stat and assign them to a variable
 
-    // month with most entries for a year for user
-    // TO DO: where do we get the year param?
+    // // month with most entries for a year for user
+    // // TO DO: where do we get the year param?
 
-    // let monthWithMostEntriesYear = null;
+    // // let monthWithMostEntriesYear = null;
 
-    // if (year) {
-    //   monthWithMostEntriesYear = await getMonthWithMostEntriesYear(
-    //     userId,
-    //     year
-    //   );
-    // }
+    // // if (year) {
+    // //   monthWithMostEntriesYear = await getMonthWithMostEntriesYear(
+    // //     userId,
+    // //     year
+    // //   );
+    // // }
 
-    // month with most entries ever for user
-    const monthWithMostEntriesEver = await getMonthWithMostEntriesEver(userId);
+    // // month with most entries ever for user
+    // const monthWithMostEntriesEver = await getMonthWithMostEntriesEver(userId);
 
-    // total days journaled for user
-    const totalDaysJournaled = await getTotalDaysJournaled(userId);
+    // // total days journaled for user
+    // const totalDaysJournaled = await getTotalDaysJournaled(userId);
 
-    // longest prompt on avg for user
-    // TO DO: where do we get the ...prompts param??? check in stats.js that part also
-    const longestPromptOnAvg = await getLongestPromptOnAvg(userId);
+    // // longest prompt on avg for user
+    // // TO DO: where do we get the ...prompts param??? check in stats.js that part also
+    // const longestPromptOnAvg = await getLongestPromptOnAvg(userId);
 
-    // if successful, send them back (in what form?)
-    res.json({
-      // monthWithMostEntriesYear,
-      monthWithMostEntriesEver,
-      totalDaysJournaled,
-      longestPromptOnAvg,
-    });
+    // // if successful, send them back (in what form?)
+    // res.json({
+    //   // monthWithMostEntriesYear,
+    //   monthWithMostEntriesEver,
+    //   totalDaysJournaled,
+    //   longestPromptOnAvg,
+    // });
   } catch (err) {
     // display error in console
     logger.error(err);
