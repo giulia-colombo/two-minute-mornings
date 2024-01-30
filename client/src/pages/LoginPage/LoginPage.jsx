@@ -1,22 +1,22 @@
-import "./LoginPage.css";
-import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/auth.context";
-import authService from "../../services/auth.service";
+import './LoginPage.css';
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/auth.context';
+import authService from '../../services/auth.service';
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
+  const handleEmail = e => setEmail(e.target.value);
+  const handlePassword = e => setPassword(e.target.value);
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = e => {
     e.preventDefault();
     const requestBody = { email, password };
 
@@ -29,15 +29,15 @@ function LoginPage() {
     // Or using a service
     authService
       .login(requestBody)
-      .then((response) => {
+      .then(response => {
         // If the POST request is successful store the authentication token,
         // after the token is stored authenticate the user
         // and at last navigate to the home page
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate('/');
       })
-      .catch((error) => {
+      .catch(error => {
         // If the request resolves with an error, set the error message in the state
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
@@ -45,7 +45,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
+    <div className="LoginPage container">
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
@@ -65,7 +65,7 @@ function LoginPage() {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={'/signup'}> Sign Up</Link>
     </div>
   );
 }

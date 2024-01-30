@@ -1,4 +1,6 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
@@ -17,7 +19,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Navbar />
       <Sidebar />
       <Routes>

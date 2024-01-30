@@ -27,16 +27,16 @@ function DiaryPage() {
   }, []);
 
   return (
-    <div className="DiaryPage">
+    <div className="container">
       <h1>Diary page</h1>
 
-      {error && <div className="error">{error}</div>}
+      {error && <div className="container error">{error}</div>}
 
       {/* mapping over the state variable "entries" */}
       {entries &&
         entries.map(entry => {
           return (
-            <div className="Entry" key={entry._id}>
+            <div className="container" key={entry._id}>
               {/* display Entry here */}
               <h4>I will focus on...</h4>
               <p>{entry.focusPrompt}</p>
