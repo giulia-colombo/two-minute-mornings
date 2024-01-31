@@ -25,86 +25,24 @@ function NavigationBar() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
 
-            {isLoggedIn && (
-              <Container>
-                <Row>
-                  {' '}
-                  <Col>
-                    {' '}
-                    <Button onClick={logOutUser}>Logout </Button>
-                  </Col>
-                  <Col>
-                    {' '}
-                    <Nav.Link href="/profile">Profile</Nav.Link>
-                  </Col>
-                </Row>
-              </Container>
-            )}
-
-            {isLoggedIn && (
-              <Container>
-                <Row>
-                  <Col>
-                    <Image
-                      src="https://picsum.photos/id/402/200/300"
-                      rounded
-                    ></Image>
-                  </Col>
-                  <Col>
-                    <p>Hello, {user && user.name}! 🙂</p>
-                  </Col>
-                </Row>
-              </Container>
-            )}
-
-            {!isLoggedIn && (
-              <Container>
+            {isLoggedIn ? (
+              <>
+                {' '}
+                <Nav.Link href="/profile">Profile</Nav.Link>
+                <Button className="mx-auto" onClick={logOutUser}>
+                  Logout{' '}
+                </Button>
+              </>
+            ) : (
+              <>
                 <Nav.Link href="/signup">Signup</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
-              </Container>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-
-  //   <nav className="navbar">
-  //     <Link to="/">
-  //       <button>Home</button>
-  //     </Link>
-
-  //     {isLoggedIn && (
-  //       <>
-  //         <button onClick={logOutUser}>Logout</button>
-
-  //         <Link to="/profile">
-  //           <button>Profile</button>
-  //           <img
-  //             src="https://picsum.photos/id/402/200/300"
-  //             style={{ width: 50, height: 50, borderRadius: 25 }}
-  //             alt="profile"
-  //           />
-  //         </Link>
-
-  //         <span>{user && user.name}</span>
-  //       </>
-  //     )}
-
-  //     {!isLoggedIn && (
-  //       <>
-  //         <Link to="/signup">
-  //           {' '}
-  //           <button>Sign Up</button>{' '}
-  //         </Link>
-  //         <Link to="/login">
-  //           {' '}
-  //           <button>Login</button>{' '}
-  //         </Link>
-  //       </>
-  //     )}
-  //   </nav>
-  // );
 }
-
 export default NavigationBar;
