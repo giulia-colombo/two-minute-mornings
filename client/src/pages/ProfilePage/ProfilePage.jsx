@@ -2,26 +2,29 @@ import './ProfilePage.css';
 import { AuthContext } from '../../context/auth.context';
 import { useContext } from 'react';
 import Image from 'react-bootstrap/esm/Image';
+import Container from 'react-bootstrap/esm/Container';
+import AdviceSlip from '../../components/AdviceSlip/AdviceSlip';
 
 function ProfilePage() {
   const { isLoggedIn, user } = useContext(AuthContext);
   return (
-    <div className="container">
-      <h1>Profile page</h1>
-
+    <Container className="d-flex flex-column align-items-center">
       {isLoggedIn && (
-        <div className="ml-lg-auto d-flex justify-content-space-between">
+        <>
           <Image
+            className="my-4"
             src="https://picsum.photos/id/402/200/300"
             roundedCircle
-            style={{ width: 50, height: 50 }}
+            style={{ width: 150, height: 150 }}
             alt="profile-pic"
           />
 
-          <h3>Hello, {user && user.name}! 🙂</h3>
-        </div>
+          <h5 className="my-4">Welcome back, {user.name}! 💙</h5>
+        </>
       )}
-    </div>
+
+      <AdviceSlip></AdviceSlip>
+    </Container>
   );
 }
 

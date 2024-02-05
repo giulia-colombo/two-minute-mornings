@@ -8,11 +8,10 @@ function EntryCard({ entry }) {
   const { user } = useContext(AuthContext);
 
   const dateObj = new Date(Date.parse(createdAt));
-  console.log('dateObj', dateObj);
   const readableDate = format(dateObj, 'EEEE, do MMMM yyyy');
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem' }} className="m-3">
       <Card.Body>
         <Card.Title>{readableDate}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">

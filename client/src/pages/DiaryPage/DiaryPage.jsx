@@ -2,14 +2,15 @@
 import { useEffect, useState } from 'react';
 import authService from '../../services/auth.service';
 import { API_ENDPOINTS } from '../../config';
-import EntryCard from '../../components/EntryCard.jsx/EntryCard';
+import EntryCard from '../../components/EntryCard/EntryCard';
+import Container from 'react-bootstrap/esm/Container';
 
 function DiaryPage() {
   const [entries, setEntries] = useState([]);
   const [error, setError] = useState(null);
 
   const getAllEntries = () => {
-    console.log(`getAllEntries called!!!!`);
+    console.log(`getAllEntries called!!!`);
 
     authService.api
       .get(API_ENDPOINTS.entries)
@@ -31,7 +32,7 @@ function DiaryPage() {
     return <EntryCard key={entry._id} entry={entry}></EntryCard>;
   });
 
-  return EntryCardItems;
+  return <Container className="d-flex flex-wrap ">{EntryCardItems}</Container>;
 
   // return (
   //   <div className="container">

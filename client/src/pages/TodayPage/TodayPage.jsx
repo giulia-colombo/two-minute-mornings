@@ -1,10 +1,10 @@
-import InputPrompt from '../../components/PromptInput/PromptInput';
+import PromptInput from '../../components/PromptInput/PromptInput';
 
 function TodayPage() {
   return (
     <div className="container">
-      <h1>Today page</h1>
-      <InputPrompt />
+      <h1>Today</h1>
+      <PromptInput />
     </div>
   );
 }
