@@ -3,7 +3,7 @@ import { AuthContext } from '../../context/auth.context';
 import { useContext } from 'react';
 import Image from 'react-bootstrap/esm/Image';
 import Container from 'react-bootstrap/esm/Container';
-import AdviceSlip from '../../components/AdviceSlip/AdviceSlip';
+import AdviceSlip from '../../components/AdviceDisplay/AdviceDisplay';
 
 function ProfilePage() {
   const { isLoggedIn, user } = useContext(AuthContext);

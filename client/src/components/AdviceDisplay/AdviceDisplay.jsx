@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
+import CardDisplay from '../CardDisplay/CardDisplay';
 
-function AdviceSlip() {
+function AdviceDisplay() {
   const ADVICE_API_URL = 'https://api.adviceslip.com/advice';
   const [advice, setAdvice] = useState(null);
   const [error, setError] = useState(null);
@@ -28,15 +28,9 @@ function AdviceSlip() {
 
   return (
     <>
-      {advice && (
-        <Card className="my-4">
-          <Card.Body>{advice}</Card.Body>
-        </Card>
-      )}
-
-      {error && <p>{error}</p>}
+      <CardDisplay content={advice} error={error}></CardDisplay>
     </>
   );
 }
 
-export default AdviceSlip;
+export default AdviceDisplay;
