@@ -1,0 +1,22 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+
+// Override Bootstrap's theme colors
+$theme-colors: (
+  'primary': $indigo,
+  'secondary': $purple,
+  'success': $teal,
+  'info': $cyan,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+a {
+  color: $primary;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}

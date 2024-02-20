@@ -33,30 +33,6 @@ function DiaryPage() {
   });
 
   return <Container className="d-flex flex-wrap ">{EntryCardItems}</Container>;
-
-  // return (
-  //   <div className="container">
-  //     <h1>Diary page</h1>
-
-  //     {error && <div className="container error">{error}</div>}
-
-  //     {/* mapping over the state variable "entries" */}
-  //     {entries &&
-  //       entries.map(entry => {
-  //         return (
-  //           <div className="container" key={entry._id}>
-  //             {/* display Entry here */}
-  //             <h4>I will focus on...</h4>
-  //             <p>{entry.focusPrompt}</p>
-  //             <h4>I am grateful for...</h4>
-  //             <p>{entry.gratefulPrompt}</p>
-  //             <h4>I will let go of...</h4>
-  //             <p>{entry.letGoPrompt}</p>
-  //           </div>
-  //         );
-  //       })}
-  //   </div>
-  // );
 }
 
 export default DiaryPage;

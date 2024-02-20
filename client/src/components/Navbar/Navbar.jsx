@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
@@ -17,9 +16,9 @@ function NavigationBar() {
 
   // return (
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary sticky-top">
       <Container>
-        <Navbar.Brand href="#home">Two Minute Mornings</Navbar.Brand>
+        <Navbar.Brand href="#home">Two Minute Mornings 💜</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -1,5 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/custom.scss';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -16,12 +17,14 @@ import Navbar from './components/Navbar/Navbar';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from './components/IsAnon/IsAnon';
 import Sidebar from './components/Sidebar/Sidebar';
+import OffcanvasSidebar from './components/OffcanvasSidebar/OffcanvasSidebar.jsx';
 
 function App() {
   return (
     <div className="App container">
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <OffcanvasSidebar />
       <Routes>
         <Route index element={<HomePage />} />
 

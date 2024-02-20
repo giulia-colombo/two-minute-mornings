@@ -1,9 +1,11 @@
+import Container from 'react-bootstrap/esm/Container';
+
 const SingleMetric = ({ metricName, metricValue }) => {
   return (
-    <div className="SingleMetric">
-      <h2>{metricName}</h2>
-      <p> {metricValue}</p>
-    </div>
+    <Container>
+      <h4 className="my-2 py-2">{metricName}</h4>
+      <p className="my-2 py-2 text-center "> {metricValue}</p>
+    </Container>
   );
 };
 

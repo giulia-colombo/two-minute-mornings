@@ -2,9 +2,9 @@ import Nav from 'react-bootstrap/Nav';
 
 const Sidebar = () => {
   return (
-    <Nav variant="tabs">
+    <Nav className="sidebar" variant="tabs ">
       <Nav.Item>
-        <Nav.Link href="/diary">Your journal</Nav.Link>
+        <Nav.Link href="/diary">Your diary</Nav.Link>
       </Nav.Item>
 
       <Nav.Item>
