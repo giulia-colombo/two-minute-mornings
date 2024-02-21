@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import Image from 'react-bootstrap/esm/Image';
 import Container from 'react-bootstrap/esm/Container';
 import AdviceSlip from '../../components/AdviceDisplay/AdviceDisplay';
+import AdviceDisplay from '../../components/AdviceDisplay/AdviceDisplay';
+import ActivityDisplay from '../../components/ActivityDisplay/ActivityDisplay';
+import QuoteDisplay from '../../components/QuoteDisplay/QuoteDisplay';
 
 function ProfilePage() {
   const { isLoggedIn, user } = useContext(AuthContext);
@@ -23,7 +26,9 @@ function ProfilePage() {
         </>
       )}
 
-      <AdviceSlip></AdviceSlip>
+      <AdviceDisplay></AdviceDisplay>
+      <ActivityDisplay></ActivityDisplay>
+      <QuoteDisplay></QuoteDisplay>
     </Container>
   );
 }
