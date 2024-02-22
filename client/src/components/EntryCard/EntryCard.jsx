@@ -17,17 +17,17 @@ function EntryCard({ entry }) {
         <Card.Subtitle className="mb-2 text-muted">
           Today I will focus on:
         </Card.Subtitle>
-        <Card.Text>{focusPrompt}</Card.Text>
+        <Card.Text className="text-center">{focusPrompt}</Card.Text>
 
         <Card.Subtitle className="mb-2 text-muted">
           Today I am grateful for:
         </Card.Subtitle>
-        <Card.Text>{gratefulPrompt}</Card.Text>
+        <Card.Text className="text-center">{gratefulPrompt}</Card.Text>
 
         <Card.Subtitle className="mb-2 text-muted">
           Today I will let go of:
         </Card.Subtitle>
-        <Card.Text>{letGoPrompt}</Card.Text>
+        <Card.Text className="text-center">{letGoPrompt}</Card.Text>
       </Card.Body>
       <Card.Footer className="text-muted">by {user.name} </Card.Footer>
     </Card>

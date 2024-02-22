@@ -26,18 +26,24 @@ function OffcanvasSidebar() {
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div class="list-group">
+          <div class="list-group ">
             <a
               href="/today"
-              class="list-group-item list-group-item-action"
+              class="list-group-item list-group-item-action bg-primary bg-opacity-10"
               aria-current="true"
             >
               Today 📅
             </a>
-            <a href="/diary" class="list-group-item list-group-item-action">
+            <a
+              href="/diary"
+              class="list-group-item list-group-item-action bg-primary bg-opacity-10"
+            >
               Your journal 📔
             </a>
-            <a href="/stats" class="list-group-item list-group-item-action">
+            <a
+              href="/stats"
+              class="list-group-item list-group-item-action bg-primary bg-opacity-10"
+            >
               Your stats 📈
             </a>
           </div>

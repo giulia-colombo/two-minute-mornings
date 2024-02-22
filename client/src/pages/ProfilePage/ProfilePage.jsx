@@ -22,12 +22,14 @@ function ProfilePage() {
             alt="profile-pic"
           />
 
-          <h5 className="my-4">Welcome back, {user.name}! 💙</h5>
+          <h4 className="my-4">Welcome back, {user.name}! 💙</h4>
         </>
       )}
 
       <AdviceDisplay></AdviceDisplay>
+
       <ActivityDisplay></ActivityDisplay>
+
       <QuoteDisplay></QuoteDisplay>
     </Container>
   );

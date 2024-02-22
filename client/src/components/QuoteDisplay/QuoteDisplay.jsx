@@ -30,6 +30,7 @@ function QuoteDisplay() {
   return (
     <>
       <CardDisplay
+        cardTitle={'Some words of wisdom'}
         content={quote.content}
         author={quote.author}
         error={error}

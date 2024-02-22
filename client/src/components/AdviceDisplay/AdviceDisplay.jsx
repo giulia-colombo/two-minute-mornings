@@ -28,7 +28,11 @@ function AdviceDisplay() {
 
   return (
     <>
-      <CardDisplay content={advice} error={error}></CardDisplay>
+      <CardDisplay
+        cardTitle={'A piece of advice for you'}
+        content={advice}
+        error={error}
+      ></CardDisplay>
     </>
   );
 }

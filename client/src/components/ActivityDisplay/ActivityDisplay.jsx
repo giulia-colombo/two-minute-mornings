@@ -15,7 +15,7 @@ function ActivityDisplay() {
       .get(ACTIVITY_API_URL)
       .then(res => {
         console.log(`res.data.activity`, res.data.activity);
-        setActivity(res.data.activity);
+        setActivity(res.data.activity + '.');
       })
       .catch(err => {
         setError('Failed to load advice.');
@@ -29,7 +29,11 @@ function ActivityDisplay() {
 
   return (
     <>
-      <CardDisplay content={activity} error={error}></CardDisplay>
+      <CardDisplay
+        cardTitle={"Bored & don't know what to do?"}
+        content={activity}
+        error={error}
+      ></CardDisplay>
     </>
   );
 }

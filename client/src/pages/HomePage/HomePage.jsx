@@ -8,7 +8,7 @@ function HomePage() {
       <ListGroup as="ol" className="col-md-8">
         <ListGroup.Item
           as="li"
-          className="d-flex justify-content-between align-items-start m-4 bg-info bg-opacity-10 border border-info rounded-end"
+          className="d-flex justify-content-between align-items-start m-4 bg-primary bg-opacity-10 border rounded-4 border-2"
         >
           <div className="ms-2 me-auto p-3">
             <h5 className="fw-bold m-2">Two Minute Mornings</h5>
@@ -27,7 +27,7 @@ function HomePage() {
         </ListGroup.Item>
         <ListGroup.Item
           as="li"
-          className="d-flex justify-content-between align-items-start m-4 bg-info bg-opacity-10 border border-info rounded-end"
+          className="d-flex justify-content-between align-items-start m-4 bg-primary bg-opacity-10 border rounded-4 border-2"
         >
           <div className="ms-2 me-auto p-3 justify-text">
             <h5 className="fw-bold m-2">The Power of Journaling </h5>
@@ -50,7 +50,7 @@ function HomePage() {
         </ListGroup.Item>
         <ListGroup.Item
           as="li"
-          className="d-flex justify-content-between align-items-start m-4 bg-info bg-opacity-10 border border-info rounded-end"
+          className="d-flex justify-content-between align-items-start m-4 bg-primary bg-opacity-10 border rounded-4 border-2"
         >
           <div className="ms-2 me-auto p-3">
             <h5 className="fw-bold m-2">How to Use This App</h5>

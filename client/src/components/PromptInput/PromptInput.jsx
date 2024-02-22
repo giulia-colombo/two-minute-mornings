@@ -45,10 +45,10 @@ const PromptInput = () => {
   };
 
   return (
-    <Container>
+    <Container className="col-8">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="my-2 py-3" controlId="focusPrompt">
-          <Form.Label>Today I will focus on:</Form.Label>
+          <Form.Label className="fw-bold">Today I will focus on:</Form.Label>
           <Form.Control
             as="textarea"
             name="focusPrompt"
@@ -60,7 +60,7 @@ const PromptInput = () => {
         </Form.Group>
 
         <Form.Group className="my-2 py-3" controlId="gratefulPrompt">
-          <Form.Label>Today I am grateful for:</Form.Label>
+          <Form.Label className="fw-bold">Today I am grateful for:</Form.Label>
           <Form.Control
             as="textarea"
             name="focusPrompt"
@@ -71,7 +71,7 @@ const PromptInput = () => {
         </Form.Group>
 
         <Form.Group className="my-2 py-3" controlId="letGoPrompt">
-          <Form.Label>Today I let go of:</Form.Label>
+          <Form.Label className="fw-bold">Today I let go of:</Form.Label>
           <Form.Control
             as="textarea"
             name="letGoPrompt"

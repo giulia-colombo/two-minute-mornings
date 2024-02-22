@@ -16,14 +16,13 @@ import StatsPage from './pages/StatsPage/StatsPage.jsx';
 import Navbar from './components/Navbar/Navbar';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from './components/IsAnon/IsAnon';
-import Sidebar from './components/Sidebar/Sidebar';
 import OffcanvasSidebar from './components/OffcanvasSidebar/OffcanvasSidebar.jsx';
 
 function App() {
   return (
     <div className="App container">
       <Navbar />
-      {/* <Sidebar /> */}
+
       <OffcanvasSidebar />
       <Routes>
         <Route index element={<HomePage />} />
