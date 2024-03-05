@@ -45,7 +45,7 @@ const PromptInput = () => {
   };
 
   return (
-    <Container className="col-8">
+    <Container className="col-9">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="my-2 py-3" controlId="focusPrompt">
           <Form.Label className="fw-bold">Today I will focus on:</Form.Label>

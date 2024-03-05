@@ -1,7 +1,7 @@
 $primary: #e2abff;
 $secondary: #a2c4fc;
 $dark: #7f06bf;
-
+$danger: #fa6690;
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/bootstrap';
@@ -11,4 +11,14 @@ a {
   &:hover {
     color: darken($primary, 30%);
   }
+}
+
+.errorMessage {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.successMessage {
+  color: var(--dark);
+  font-weight: bold;
 }
