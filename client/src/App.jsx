@@ -9,9 +9,9 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import DiaryPage from './pages/DiaryPage/DiaryPage.jsx';
-// import DiaryPage2 from "./pages/DiaryPage2/DiaryPage2"
 import TodayPage from './pages/TodayPage/TodayPage.jsx';
 import StatsPage from './pages/StatsPage/StatsPage.jsx';
+import EditUserPage from './pages/EditUserPage/EditUserPage.jsx';
 
 import Navbar from './components/Navbar/Navbar';
 import IsPrivate from './components/IsPrivate/IsPrivate';
@@ -32,6 +32,15 @@ function App() {
           element={
             <IsPrivate>
               <ProfilePage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/edit-user"
+          element={
+            <IsPrivate>
+              <EditUserPage />
             </IsPrivate>
           }
         />
