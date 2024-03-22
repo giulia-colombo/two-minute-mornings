@@ -184,25 +184,71 @@ router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
   }
 });
 
-router.get('/psw-reset/validate/:pswResetToken', (req, res, next) => {
-  // TO DO
-  // 1. grab the token from req.params
-  const { pswResetToken } = req.params;
+router.get(
+  '/psw-reset/validate/:psw-reset-token',
+  isAuthenticated,
+  (req, res, next) => {
+    // TO DO
+    // 1. grab the token from req.params
+    const { 'psw-reset-token': pswResetToken } = req.params;
 
+    try {
+      // 2. Check validity of token:
+      jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
+      // 3. Send back a response to the frontend that communicates that the token is still valid
+      res
+        .status(200)
+        .json({ message: 'Password reset token has been validated.' });
+    } catch (err) {
+      // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
+      logger.error('Could not validate password reset token: ', err);
+      res
+        .status(500)
+        .json({ message: 'Password reset token is invalid or has expired.' });
+    }
+  }
+);
+
+router.put('/psw-reset/update', isAuthenticated, async (req, res, next) => {
+  //TO DO
+  // 0. grab token containing data about the user
+  const { email } = req.payload;
+
+  // 1. Find user in db with that email
   try {
-    // 2. Check validity of token:
-    jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
-    // 3. Send back a response to the frontend that communicates that the token is still valid
-    res
-      .status(200)
-      .json({ message: 'Password reset token has been validated.' });
+    const foundUser = await User.findOne({ email });
+    // 2. grab the password from the UI from req.body
+    const { newPsw } = req.body;
+
+    // 3a. If a user is not found, send back error.
+    if (!foundUser) {
+      res.status(404).json({ message: 'User not found.' });
+      return;
+    }
+
+    // 3b. If a user is found, check that the new password complies with the requirements (use regex code that we used for validating a newly created password during signup)
+    const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    if (!passwordRegex.test(newPsw)) {
+      res.status(400).json({
+        message:
+          'Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.',
+      });
+      return;
+    }
+    // 4. hash the new password
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashedPassword = bcrypt.hashSync(newPsw, salt);
+    // 5. update the password for the user
+    foundUser.password = hashedPassword;
+    // 6. do we need to save the user again??
+    await foundUser.save();
+    // 7. send an email that the password has been updated? or can we just show a success message in the UI?
+    res.status(200).json({ message: 'Password updated successfully.' });
   } catch (err) {
-    // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
-    logger.error('Could not validate password reset token: ', err);
+    logger.error(err);
     res
       .status(500)
-      .json({ message: 'Password reset token is invalid or has expired.' });
+      .json({ message: 'Error updating password. Please try again later.' });
   }
 });
-
 export default router;
