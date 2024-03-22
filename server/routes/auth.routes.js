@@ -143,5 +143,66 @@ router.get('/verify', isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });
 
-// module.exports = router;
+router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
+  // Grab the email the user has inserted in the frontend via req.body
+  const { email } = req.body;
+
+  // Check if a user with that email exists.
+  try {
+    const foundUser = await User.findOne({ email });
+    if (!foundUser) {
+      res.status(400).json({ message: "Couldn't find email in the database." });
+    }
+
+    // Grab id and name from the user object.
+    const { _id, name } = foundUser;
+
+    // Create an object that will be set as the token payload.
+    const payload = { _id, email, name, type: 'passwordReset' };
+
+    //add the user_id property to the req object
+    req.user_id = _id;
+
+    // Create a JSON Web Token and sign it
+    const pswResetToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
+      algorithm: 'HS256',
+      expiresIn: '24h',
+    });
+
+    const pswResetURL = `${process.env.ORIGIN}/password-reset/${pswResetToken}`;
+
+    //TO DO: code sendPswResetEmail
+    await sendPswResetEmail(email, pswResetURL);
+
+    // Send the token as the response
+    res
+      .status(200)
+      .json({ message: 'Password reset email sent successfully.' });
+  } catch (err) {
+    logger.error('Error rietriving user in the database. ', err);
+    res.status(500).json({ message: 'Internal server error.' });
+  }
+});
+
+router.get('/psw-reset/validate/:pswResetToken', (req, res, next) => {
+  // TO DO
+  // 1. grab the token from req.params
+  const { pswResetToken } = req.params;
+
+  try {
+    // 2. Check validity of token:
+    jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
+    // 3. Send back a response to the frontend that communicates that the token is still valid
+    res
+      .status(200)
+      .json({ message: 'Password reset token has been validated.' });
+  } catch (err) {
+    // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
+    logger.error('Could not validate password reset token: ', err);
+    res
+      .status(500)
+      .json({ message: 'Password reset token is invalid or has expired.' });
+  }
+});
+
 export default router;

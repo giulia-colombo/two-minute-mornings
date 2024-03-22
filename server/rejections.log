@@ -26,3 +26,45 @@ ReferenceError: stats is not defined
     at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
     at async loadESM (node:internal/process/esm_loader:91:5)
     at async handleMainPromise (node:internal/modules/run_main:65:12)
+[18-03-2024 14:12:44] error: 	uncaughtException: listen EADDRINUSE: address already in use :::5005
+Error: listen EADDRINUSE: address already in use :::5005
+    at Server.setupListenHandle [as _listen2] (node:net:1485:16)
+    at listenInCluster (node:net:1533:12)
+    at Server.listen (node:net:1621:7)
+    at Function.listen (/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/node_modules/express/lib/application.js:635:24)
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/server.js:8:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+[19-03-2024 14:39:34] error: 	uncaughtException: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/middleware/jwt.middleware.js:29:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+[19-03-2024 14:42:39] error: 	uncaughtException: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/middleware/jwt.middleware.js:29:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+[19-03-2024 14:45:10] error: 	uncaughtException: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: module is not defined in ES module scope
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/middleware/jwt.middleware.js:29:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)

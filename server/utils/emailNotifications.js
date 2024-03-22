@@ -42,6 +42,7 @@ export const sendWelcomeEmail = (toEmail, userName) => {
   };
 
   const welcomeEmailDetails = createEmailDetails(welcomeEmailConfig);
+
   _sendEmail(welcomeEmailDetails);
 };
 
@@ -64,7 +65,15 @@ const createEmailDetails = ({ subject, htmlContent, userName, toEmail }) => {
   return emailDetails;
 };
 
-// module.exports = {
-//   sendReminderEmail,
-//   sendWelcomeEmail,
-// };
+export const sendPswResetEmail = (toEmail, userName, pswResetURL) => {
+  const pswResetEmailConfig = {
+    subject: 'Two Minute Mornings - Password reset link',
+    htmlContent: `<p>Please click on the following link to reset your password: <a href=${pswResetURL}>Password reset</a></p>.`,
+    userName,
+    toEmail,
+  };
+
+  const pswResetEmailDetails = createEmailDetails(pswResetEmailConfig);
+
+  _sendEmail(pswResetEmailDetails);
+};

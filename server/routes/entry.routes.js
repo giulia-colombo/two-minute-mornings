@@ -100,7 +100,7 @@ router.put('/entries/:entryId', isAuthenticated, async (req, res, next) => {
   }
 });
 
-// DELETE /api/entries/:entryId
+// DELETE /api/entries/:entryId - delete entry
 //must delete the entry document and also remove it from the [entries] of the User/creator
 router.delete('/entries/:entryId', isAuthenticated, async (req, res, next) => {
   const { entryId } = req.params;

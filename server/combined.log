@@ -427,3 +427,557 @@
 [05-02-2024 17:30:37] info: 	req.payload
 [05-02-2024 17:30:48] info: 	req.payload
 [05-02-2024 17:31:32] info: 	req.payload
+[06-02-2024 11:29:59] info: 	Server listening on http://localhost:5005
+[06-02-2024 11:29:59] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[06-02-2024 11:30:23] error: 	ERROR
+[06-02-2024 11:32:36] error: 	ERROR
+[06-02-2024 11:32:47] info: 	req.payload
+[06-02-2024 11:33:06] info: 	req.payload
+[06-02-2024 11:33:19] info: 	req.payload
+[06-02-2024 11:33:22] info: 	req.payload
+[06-02-2024 11:33:26] info: 	req.payload
+[06-02-2024 11:35:22] info: 	req.payload
+[06-02-2024 11:35:25] info: 	req.payload
+[06-02-2024 11:35:26] info: 	req.payload
+[06-02-2024 11:35:35] info: 	req.payload
+[06-02-2024 11:35:36] info: 	req.payload
+[06-02-2024 11:35:55] info: 	req.payload
+[06-02-2024 11:35:58] info: 	req.payload
+[06-02-2024 11:49:31] info: 	req.payload
+[06-02-2024 11:49:34] info: 	req.payload
+[06-02-2024 11:49:39] info: 	req.payload
+[06-02-2024 11:52:16] info: 	req.payload
+[06-02-2024 11:53:10] info: 	req.payload
+[06-02-2024 11:56:02] info: 	req.payload
+[06-02-2024 11:56:04] info: 	req.payload
+[06-02-2024 11:56:48] info: 	req.payload
+[06-02-2024 11:56:51] info: 	req.payload
+[06-02-2024 11:56:53] info: 	req.payload
+[06-02-2024 11:56:55] info: 	req.payload
+[06-02-2024 11:57:02] info: 	req.payload
+[06-02-2024 11:57:05] info: 	req.payload
+[06-02-2024 12:03:43] info: 	req.payload
+[06-02-2024 12:09:00] info: 	req.payload
+[06-02-2024 12:10:22] info: 	req.payload
+[06-02-2024 12:15:29] info: 	req.payload
+[06-02-2024 12:17:20] info: 	req.payload
+[06-02-2024 12:20:21] info: 	req.payload
+[06-02-2024 12:20:24] info: 	req.payload
+[06-02-2024 12:20:27] info: 	req.payload
+[06-02-2024 12:20:31] info: 	req.payload
+[06-02-2024 12:20:33] info: 	req.payload
+[06-02-2024 12:20:37] info: 	req.payload
+[06-02-2024 12:20:39] info: 	req.payload
+[06-02-2024 12:20:40] info: 	req.payload
+[06-02-2024 12:21:28] info: 	req.payload
+[06-02-2024 12:25:43] info: 	req.payload
+[06-02-2024 12:28:17] info: 	req.payload
+[06-02-2024 12:41:53] info: 	req.payload
+[06-02-2024 12:42:48] info: 	req.payload
+[06-02-2024 12:44:27] info: 	req.payload
+[08-02-2024 10:50:18] info: 	Server listening on http://localhost:5005
+[08-02-2024 10:50:18] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[08-02-2024 10:50:27] error: 	ERROR
+[08-02-2024 10:50:51] error: 	ERROR
+[08-02-2024 10:51:49] error: 	ERROR
+[08-02-2024 10:52:02] info: 	req.payload
+[08-02-2024 10:52:36] info: 	req.payload
+[08-02-2024 10:53:07] info: 	req.payload
+[08-02-2024 10:53:42] info: 	req.payload
+[08-02-2024 10:53:43] info: 	req.payload
+[08-02-2024 10:53:47] info: 	req.payload
+[08-02-2024 10:53:51] info: 	req.payload
+[08-02-2024 11:48:06] info: 	req.payload
+[08-02-2024 11:48:45] info: 	req.payload
+[08-02-2024 12:05:32] info: 	req.payload
+[08-02-2024 12:09:47] info: 	req.payload
+[08-02-2024 12:09:49] info: 	req.payload
+[08-02-2024 12:09:54] info: 	req.payload
+[08-02-2024 12:09:55] info: 	req.payload
+[08-02-2024 12:15:44] info: 	req.payload
+[08-02-2024 12:15:47] info: 	req.payload
+[08-02-2024 12:18:08] info: 	req.payload
+[08-02-2024 12:18:13] info: 	req.payload
+[08-02-2024 12:21:41] info: 	req.payload
+[08-02-2024 12:36:47] info: 	req.payload
+[08-02-2024 12:36:58] info: 	req.payload
+[08-02-2024 12:38:58] info: 	req.payload
+[08-02-2024 12:42:10] info: 	req.payload
+[08-02-2024 12:42:12] info: 	req.payload
+[08-02-2024 12:42:15] info: 	req.payload
+[08-02-2024 12:43:38] info: 	req.payload
+[09-02-2024 10:33:01] info: 	Server listening on http://localhost:5005
+[09-02-2024 10:33:01] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-02-2024 10:33:10] error: 	ERROR
+[20-02-2024 16:54:57] info: 	Server listening on http://localhost:5005
+[20-02-2024 16:54:57] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[20-02-2024 16:55:09] error: 	ERROR
+[20-02-2024 16:55:23] error: 	ERROR
+[20-02-2024 16:55:42] info: 	req.payload
+[20-02-2024 16:55:45] info: 	req.payload
+[20-02-2024 16:55:47] info: 	req.payload
+[20-02-2024 16:55:49] info: 	req.payload
+[20-02-2024 16:55:50] info: 	req.payload
+[20-02-2024 16:55:56] info: 	req.payload
+[20-02-2024 16:55:59] info: 	req.payload
+[20-02-2024 17:20:34] info: 	req.payload
+[20-02-2024 17:42:03] info: 	req.payload
+[20-02-2024 18:07:29] info: 	req.payload
+[20-02-2024 18:07:32] info: 	req.payload
+[20-02-2024 18:07:36] info: 	req.payload
+[20-02-2024 18:07:43] info: 	req.payload
+[20-02-2024 18:07:47] info: 	req.payload
+[20-02-2024 18:08:23] info: 	req.payload
+[20-02-2024 18:08:24] info: 	req.payload
+[20-02-2024 18:09:41] info: 	req.payload
+[20-02-2024 18:10:10] info: 	req.payload
+[20-02-2024 18:10:12] info: 	req.payload
+[20-02-2024 18:10:21] info: 	req.payload
+[20-02-2024 20:00:00] info: 	usersWithIncompleteEntry
+[20-02-2024 20:00:00] info: 	usersWithIncompleteEntries: 
+[20-02-2024 20:00:00] info: 	Sending reminder email to lorena@test.com with name Lorena
+[20-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[20-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[20-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[20-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[20-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[20-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[20-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[20-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[21-02-2024 10:22:48] info: 	Server listening on http://localhost:5005
+[21-02-2024 10:22:48] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-02-2024 10:23:25] error: 	ERROR
+[21-02-2024 10:23:31] error: 	ERROR
+[21-02-2024 10:23:45] info: 	req.payload
+[21-02-2024 12:10:12] info: 	req.payload
+[21-02-2024 12:41:29] info: 	req.payload
+[21-02-2024 12:41:58] info: 	req.payload
+[21-02-2024 12:42:01] info: 	req.payload
+[21-02-2024 12:44:45] info: 	req.payload
+[22-02-2024 11:51:10] info: 	Server listening on http://localhost:5005
+[22-02-2024 11:51:10] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[22-02-2024 11:51:34] error: 	ERROR
+[22-02-2024 11:56:41] error: 	ERROR
+[22-02-2024 11:57:01] info: 	req.payload
+[22-02-2024 11:57:41] info: 	req.payload
+[22-02-2024 12:05:07] info: 	req.payload
+[22-02-2024 12:05:13] info: 	req.payload
+[22-02-2024 12:05:41] info: 	req.payload
+[22-02-2024 12:07:26] info: 	req.payload
+[22-02-2024 12:07:54] info: 	req.payload
+[22-02-2024 12:23:54] info: 	req.payload
+[22-02-2024 12:24:29] info: 	req.payload
+[22-02-2024 12:28:16] info: 	req.payload
+[22-02-2024 12:28:50] info: 	req.payload
+[22-02-2024 12:29:28] info: 	req.payload
+[22-02-2024 12:30:35] info: 	req.payload
+[22-02-2024 12:31:32] info: 	req.payload
+[22-02-2024 12:33:55] info: 	req.payload
+[22-02-2024 12:38:32] info: 	req.payload
+[22-02-2024 12:39:52] info: 	req.payload
+[22-02-2024 12:41:53] info: 	req.payload
+[22-02-2024 12:42:12] info: 	req.payload
+[22-02-2024 12:48:01] info: 	req.payload
+[22-02-2024 12:48:26] info: 	req.payload
+[22-02-2024 12:48:40] info: 	req.payload
+[22-02-2024 12:48:47] info: 	req.payload
+[22-02-2024 12:48:52] info: 	req.payload
+[22-02-2024 12:48:55] info: 	req.payload
+[22-02-2024 12:49:10] info: 	req.payload
+[22-02-2024 12:49:18] info: 	req.payload
+[22-02-2024 12:49:21] info: 	req.payload
+[22-02-2024 12:49:26] info: 	req.payload
+[22-02-2024 12:49:34] info: 	req.payload
+[22-02-2024 12:49:46] info: 	req.payload
+[22-02-2024 12:52:58] info: 	req.payload
+[22-02-2024 16:37:15] info: 	Server listening on http://localhost:5005
+[22-02-2024 16:37:15] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[22-02-2024 16:37:25] info: 	req.payload
+[22-02-2024 16:52:56] info: 	req.payload
+[22-02-2024 16:54:32] info: 	req.payload
+[22-02-2024 16:54:39] info: 	req.payload
+[22-02-2024 17:13:03] info: 	req.payload
+[22-02-2024 17:17:32] info: 	req.payload
+[22-02-2024 17:18:46] info: 	req.payload
+[22-02-2024 17:28:20] info: 	req.payload
+[22-02-2024 17:29:38] info: 	req.payload
+[22-02-2024 17:30:28] info: 	req.payload
+[22-02-2024 17:30:33] info: 	req.payload
+[22-02-2024 17:34:27] info: 	req.payload
+[22-02-2024 17:47:45] info: 	req.payload
+[22-02-2024 17:47:48] info: 	req.payload
+[22-02-2024 17:50:11] info: 	req.payload
+[22-02-2024 17:50:18] info: 	req.payload
+[22-02-2024 17:52:49] info: 	req.payload
+[22-02-2024 17:52:52] info: 	req.payload
+[22-02-2024 17:54:58] info: 	req.payload
+[22-02-2024 18:20:26] info: 	Server listening on http://localhost:5005
+[22-02-2024 18:20:26] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[22-02-2024 20:00:00] info: 	usersWithIncompleteEntry
+[22-02-2024 20:00:00] info: 	usersWithIncompleteEntries: 
+[22-02-2024 20:00:00] info: 	Sending reminder email to lorena@test.com with name Lorena
+[22-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[22-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[22-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[22-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[22-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[22-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[22-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[22-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[22-02-2024 22:12:19] info: 	Server listening on http://localhost:5005
+[22-02-2024 22:12:19] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[23-02-2024 10:50:40] info: 	Server listening on http://localhost:5005
+[23-02-2024 10:50:40] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[23-02-2024 10:50:51] error: 	ERROR
+[23-02-2024 10:51:08] error: 	ERROR
+[23-02-2024 10:51:25] error: 	ERROR
+[23-02-2024 11:14:35] info: 	Server listening on http://localhost:5005
+[23-02-2024 11:14:35] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[23-02-2024 11:16:45] info: 	Server listening on http://localhost:5005
+[23-02-2024 11:16:45] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[23-02-2024 11:18:23] info: 	Server listening on http://localhost:5005
+[23-02-2024 11:18:23] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[26-02-2024 14:42:34] info: 	Server listening on http://localhost:5005
+[26-02-2024 14:42:34] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[26-02-2024 14:43:03] info: 	req.payload
+[26-02-2024 14:43:07] info: 	req.payload
+[26-02-2024 14:43:25] info: 	req.payload
+[26-02-2024 14:43:39] info: 	req.payload
+[26-02-2024 14:43:42] info: 	req.payload
+[26-02-2024 14:43:45] info: 	req.payload
+[26-02-2024 14:43:49] info: 	req.payload
+[26-02-2024 14:47:02] info: 	req.payload
+[26-02-2024 14:53:26] info: 	req.payload
+[26-02-2024 14:53:39] info: 	req.payload
+[26-02-2024 14:54:14] info: 	req.payload
+[26-02-2024 14:54:47] info: 	req.payload
+[26-02-2024 15:25:56] info: 	req.payload
+[26-02-2024 15:35:09] info: 	req.payload
+[26-02-2024 15:35:14] info: 	req.payload
+[26-02-2024 16:17:11] info: 	req.payload
+[26-02-2024 20:00:00] info: 	usersWithIncompleteEntry
+[26-02-2024 20:00:00] info: 	usersWithIncompleteEntries: 
+[26-02-2024 20:00:00] info: 	Sending reminder email to lorena@test.com with name Lorena
+[26-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[26-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[26-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[26-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[26-02-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[26-02-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[26-02-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[26-02-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[27-02-2024 16:00:36] info: 	Server listening on http://localhost:5005
+[27-02-2024 16:00:36] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[27-02-2024 16:00:47] error: 	ERROR
+[27-02-2024 16:00:53] error: 	ERROR
+[27-02-2024 16:01:03] info: 	req.payload
+[27-02-2024 16:01:09] info: 	req.payload
+[27-02-2024 16:01:20] info: 	req.payload
+[27-02-2024 16:01:22] info: 	req.payload
+[27-02-2024 16:01:26] info: 	req.payload
+[05-03-2024 15:55:12] info: 	Server listening on http://localhost:5005
+[05-03-2024 15:55:13] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[05-03-2024 17:24:32] error: 	ERROR
+[05-03-2024 17:29:16] error: 	ERROR
+[05-03-2024 17:29:24] info: 	req.payload
+[05-03-2024 17:29:27] info: 	req.payload
+[05-03-2024 17:29:29] info: 	req.payload
+[05-03-2024 17:29:35] info: 	req.payload
+[05-03-2024 17:29:38] info: 	req.payload
+[05-03-2024 17:30:11] info: 	req.payload
+[05-03-2024 17:48:59] info: 	req.payload
+[05-03-2024 17:49:06] info: 	creatorId ==> 
+[05-03-2024 17:49:06] info: 	foundUser ===> 
+[05-03-2024 17:49:06] info: 	entryToDelete: 
+[05-03-2024 17:49:06] info: 	creator: 
+[05-03-2024 17:49:06] info: 	creator.entries ==> 
+[05-03-2024 17:49:06] info: 	entryIndex: 
+[05-03-2024 17:49:06] info: 	current entries: 
+[05-03-2024 17:51:53] info: 	req.payload
+[05-03-2024 17:51:58] info: 	creatorId ==> 
+[05-03-2024 17:51:58] info: 	foundUser ===> 
+[05-03-2024 17:51:58] info: 	entryToDelete: 
+[05-03-2024 17:51:58] info: 	creator: 
+[05-03-2024 17:51:58] info: 	creator.entries ==> 
+[05-03-2024 17:51:58] info: 	entryIndex: 
+[05-03-2024 17:51:58] info: 	current entries: 
+[05-03-2024 17:54:42] info: 	req.payload
+[05-03-2024 17:54:45] info: 	creatorId ==> 
+[05-03-2024 17:54:45] info: 	foundUser ===> 
+[05-03-2024 17:54:45] info: 	entryToDelete: 
+[05-03-2024 17:54:45] info: 	creator: 
+[05-03-2024 17:54:45] info: 	creator.entries ==> 
+[05-03-2024 17:54:45] info: 	entryIndex: 
+[05-03-2024 17:54:45] info: 	current entries: 
+[05-03-2024 18:05:13] info: 	req.payload
+[05-03-2024 18:05:49] info: 	creatorId ==> 
+[05-03-2024 18:05:49] info: 	foundUser ===> 
+[05-03-2024 18:05:49] info: 	entryToDelete: 
+[05-03-2024 18:05:49] info: 	creator: 
+[05-03-2024 18:05:49] info: 	creator.entries ==> 
+[05-03-2024 18:05:49] info: 	entryIndex: 
+[05-03-2024 18:05:49] info: 	current entries: 
+[05-03-2024 18:05:58] info: 	req.payload
+[05-03-2024 18:06:32] info: 	creatorId ==> 
+[05-03-2024 18:06:32] info: 	foundUser ===> 
+[05-03-2024 18:06:32] info: 	entryToDelete: 
+[05-03-2024 18:06:32] info: 	creator: 
+[05-03-2024 18:06:32] info: 	creator.entries ==> 
+[05-03-2024 18:06:32] info: 	entryIndex: 
+[05-03-2024 18:06:32] info: 	current entries: 
+[05-03-2024 18:06:48] info: 	req.payload
+[05-03-2024 18:07:09] info: 	req.payload
+[05-03-2024 18:07:31] info: 	creatorId ==> 
+[05-03-2024 18:07:31] info: 	foundUser ===> 
+[05-03-2024 18:07:31] info: 	entryToDelete: 
+[05-03-2024 18:07:31] info: 	creator: 
+[05-03-2024 18:07:31] info: 	creator.entries ==> 
+[05-03-2024 18:07:31] info: 	entryIndex: 
+[05-03-2024 18:07:31] info: 	current entries: 
+[05-03-2024 18:07:42] info: 	creatorId ==> 
+[05-03-2024 18:07:42] info: 	foundUser ===> 
+[05-03-2024 18:07:42] info: 	entryToDelete: 
+[05-03-2024 18:07:42] info: 	creator: 
+[05-03-2024 18:07:42] info: 	creator.entries ==> 
+[05-03-2024 18:07:42] info: 	entryIndex: 
+[05-03-2024 18:07:42] info: 	current entries: 
+[05-03-2024 18:07:46] info: 	req.payload
+[05-03-2024 18:08:26] info: 	req.payload
+[05-03-2024 18:08:33] info: 	req.payload
+[05-03-2024 18:08:56] info: 	req.body ===> 
+[05-03-2024 18:09:17] info: 	req.payload
+[05-03-2024 18:09:21] info: 	req.payload
+[05-03-2024 18:09:23] info: 	req.payload
+[05-03-2024 18:09:38] info: 	req.payload
+[05-03-2024 18:12:11] info: 	req.payload
+[05-03-2024 18:17:04] info: 	req.payload
+[05-03-2024 18:17:11] info: 	req.payload
+[05-03-2024 18:17:25] info: 	req.payload
+[05-03-2024 18:17:28] info: 	req.payload
+[05-03-2024 18:20:47] info: 	req.payload
+[05-03-2024 18:21:10] info: 	creatorId ==> 
+[05-03-2024 18:21:10] info: 	foundUser ===> 
+[05-03-2024 18:25:48] info: 	creatorId ==> 
+[05-03-2024 18:25:48] info: 	foundUser ===> 
+[05-03-2024 18:29:37] info: 	req.payload
+[05-03-2024 18:30:47] info: 	req.payload
+[05-03-2024 18:30:58] info: 	creatorId ==> 
+[05-03-2024 18:30:58] info: 	foundUser ===> 
+[05-03-2024 18:31:59] info: 	req.payload
+[05-03-2024 18:32:09] info: 	creatorId ==> 
+[05-03-2024 18:32:09] info: 	foundUser ===> 
+[06-03-2024 19:05:42] info: 	Server listening on http://localhost:5005
+[06-03-2024 19:05:42] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[06-03-2024 19:05:59] error: 	ERROR
+[06-03-2024 19:06:07] error: 	ERROR
+[06-03-2024 19:06:20] info: 	req.payload
+[06-03-2024 19:06:22] info: 	req.payload
+[06-03-2024 20:00:00] info: 	usersWithIncompleteEntry
+[06-03-2024 20:00:00] info: 	usersWithIncompleteEntries: 
+[06-03-2024 20:00:00] info: 	Sending reminder email to lorena@test.com with name Lorena
+[06-03-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[06-03-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[06-03-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[06-03-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[06-03-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[06-03-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[06-03-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[06-03-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[07-03-2024 19:04:52] info: 	Server listening on http://localhost:5005
+[07-03-2024 19:04:52] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[07-03-2024 19:05:01] error: 	ERROR
+[07-03-2024 19:05:06] error: 	ERROR
+[07-03-2024 19:05:14] info: 	req.payload
+[07-03-2024 19:05:18] info: 	req.payload
+[07-03-2024 19:36:09] info: 	Server listening on http://localhost:5005
+[07-03-2024 19:36:09] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[08-03-2024 11:15:21] info: 	Server listening on http://localhost:5005
+[08-03-2024 11:15:21] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[08-03-2024 11:15:32] error: 	ERROR
+[08-03-2024 11:16:17] error: 	ERROR
+[08-03-2024 11:16:25] info: 	req.payload
+[08-03-2024 11:45:33] info: 	req.payload
+[08-03-2024 11:46:24] info: 	req.payload
+[08-03-2024 12:11:45] info: 	req.payload
+[08-03-2024 12:12:23] info: 	req.payload
+[08-03-2024 16:27:08] info: 	req.payload
+[10-03-2024 17:03:14] info: 	Server listening on http://localhost:5005
+[10-03-2024 17:03:14] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[10-03-2024 17:03:25] error: 	ERROR
+[10-03-2024 17:18:03] error: 	ERROR
+[10-03-2024 17:18:30] info: 	req.payload
+[10-03-2024 17:18:33] info: 	req.payload
+[10-03-2024 17:18:37] info: 	req.payload
+[10-03-2024 17:18:43] info: 	req.payload
+[11-03-2024 14:50:07] info: 	Server listening on http://localhost:5005
+[11-03-2024 14:50:07] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[11-03-2024 14:50:16] error: 	ERROR
+[11-03-2024 20:06:27] info: 	usersWithIncompleteEntry
+[11-03-2024 20:06:27] info: 	usersWithIncompleteEntries: 
+[11-03-2024 20:06:27] info: 	Sending reminder email to lorena@test.com with name Lorena
+[11-03-2024 20:06:27] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[11-03-2024 20:06:27] info: 	Sending reminder email to julia.@test.com with name Julia
+[11-03-2024 20:06:27] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[11-03-2024 20:06:27] info: 	Sending reminder email to roberto@test.com with name Roberto
+[11-03-2024 20:06:27] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[11-03-2024 20:06:27] info: 	Sending reminder email to julia.@test.com with name Julia
+[11-03-2024 20:06:27] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[11-03-2024 20:06:27] info: 	Sending reminder email to roberto@test.com with name Roberto
+[12-03-2024 20:01:38] info: 	usersWithIncompleteEntry
+[12-03-2024 20:01:38] info: 	usersWithIncompleteEntries: 
+[12-03-2024 20:01:38] info: 	Sending reminder email to lorena@test.com with name Lorena
+[12-03-2024 20:01:38] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[12-03-2024 20:01:38] info: 	Sending reminder email to julia.@test.com with name Julia
+[12-03-2024 20:01:38] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[12-03-2024 20:01:38] info: 	Sending reminder email to roberto@test.com with name Roberto
+[12-03-2024 20:01:38] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[12-03-2024 20:01:38] info: 	Sending reminder email to julia.@test.com with name Julia
+[12-03-2024 20:01:38] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[12-03-2024 20:01:38] info: 	Sending reminder email to roberto@test.com with name Roberto
+[13-03-2024 16:14:50] info: 	Server listening on http://localhost:5005
+[13-03-2024 16:14:50] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[13-03-2024 16:15:00] error: 	ERROR
+[13-03-2024 16:15:07] error: 	ERROR
+[13-03-2024 16:15:14] info: 	req.payload
+[13-03-2024 16:15:17] info: 	req.payload
+[14-03-2024 17:08:40] info: 	Server listening on http://localhost:5005
+[14-03-2024 17:08:40] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[14-03-2024 20:00:00] info: 	usersWithIncompleteEntry
+[14-03-2024 20:00:00] info: 	usersWithIncompleteEntries: 
+[14-03-2024 20:00:00] info: 	Sending reminder email to lorena@test.com with name Lorena
+[14-03-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[14-03-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[14-03-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[14-03-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[14-03-2024 20:00:00] info: 	Sending reminder email to jasmine@test.com with name Jasmine
+[14-03-2024 20:00:00] info: 	Sending reminder email to julia.@test.com with name Julia
+[14-03-2024 20:00:00] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[14-03-2024 20:00:00] info: 	Sending reminder email to roberto@test.com with name Roberto
+[15-03-2024 15:02:55] info: 	Server listening on http://localhost:5005
+[15-03-2024 15:02:55] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[15-03-2024 15:03:24] error: 	ERROR
+[15-03-2024 15:47:00] error: 	ERROR
+[15-03-2024 15:47:05] error: 	ERROR
+[15-03-2024 15:47:13] info: 	req.payload
+[15-03-2024 15:47:15] info: 	req.payload
+[15-03-2024 16:06:33] info: 	req.payload
+[15-03-2024 16:06:44] info: 	req.payload
+[15-03-2024 16:20:37] info: 	req.payload
+[15-03-2024 16:23:09] info: 	req.payload
+[15-03-2024 16:26:14] info: 	req.payload
+[15-03-2024 16:26:26] info: 	req.payload
+[15-03-2024 16:29:28] info: 	req.payload
+[15-03-2024 16:29:54] info: 	req.payload
+[15-03-2024 16:31:36] info: 	req.payload
+[15-03-2024 16:31:45] info: 	req.payload
+[18-03-2024 14:12:38] info: 	Server listening on http://localhost:5005
+[18-03-2024 14:12:38] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 14:12:44] error: 	Caught exception: Error: listen EADDRINUSE: address already in use :::5005. Exception origin: uncaughtException
+[18-03-2024 14:12:44] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 14:13:21] error: 	ERROR
+[18-03-2024 14:13:28] error: 	ERROR
+[18-03-2024 14:13:38] info: 	req.payload
+[18-03-2024 14:13:42] info: 	req.payload
+[18-03-2024 14:18:14] info: 	req.payload
+[18-03-2024 14:19:12] info: 	req.payload
+[18-03-2024 14:46:31] info: 	req.payload
+[18-03-2024 14:50:01] info: 	req.payload
+[18-03-2024 14:50:43] info: 	req.payload
+[18-03-2024 14:59:55] info: 	req.payload
+[18-03-2024 15:26:34] info: 	req.payload
+[18-03-2024 15:27:04] info: 	req.payload
+[18-03-2024 15:50:56] info: 	Server listening on http://localhost:5005
+[18-03-2024 15:50:56] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 15:51:10] info: 	req.payload
+[18-03-2024 15:51:24] info: 	req.payload
+[18-03-2024 15:52:56] info: 	req.payload
+[18-03-2024 15:53:06] info: 	req.payload
+[18-03-2024 15:53:53] info: 	req.payload
+[18-03-2024 15:54:31] info: 	req.payload
+[18-03-2024 15:55:19] info: 	req.payload
+[18-03-2024 15:55:22] info: 	req.payload
+[18-03-2024 15:55:33] info: 	req.payload
+[18-03-2024 15:55:38] info: 	req.payload
+[18-03-2024 15:56:12] info: 	req.payload
+[18-03-2024 16:16:25] info: 	req.payload
+[18-03-2024 16:17:39] info: 	req.payload
+[18-03-2024 16:48:51] info: 	Server listening on http://localhost:5005
+[18-03-2024 16:48:51] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 16:52:59] info: 	Server listening on http://localhost:5005
+[18-03-2024 16:52:59] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 16:53:13] info: 	Server listening on http://localhost:5005
+[18-03-2024 16:53:13] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 16:55:41] info: 	Server listening on http://localhost:5005
+[18-03-2024 16:55:41] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[18-03-2024 16:56:48] info: 	Server listening on http://localhost:5005
+[18-03-2024 16:56:48] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 14:39:34] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 14:42:39] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 14:45:10] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 14:49:04] info: 	Server listening on http://localhost:5005
+[19-03-2024 14:49:04] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 14:49:17] error: 	ERROR
+[19-03-2024 14:49:27] info: 	req.payload
+[19-03-2024 14:49:33] info: 	req.payload
+[19-03-2024 15:03:30] info: 	Server listening on http://localhost:5005
+[19-03-2024 15:03:30] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 15:05:17] info: 	Server listening on http://localhost:5005
+[19-03-2024 15:05:17] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 15:08:38] info: 	Server listening on http://localhost:5005
+[19-03-2024 15:08:38] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 15:09:33] info: 	Server listening on http://localhost:5005
+[19-03-2024 15:09:33] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[19-03-2024 15:14:51] info: 	Server listening on http://localhost:5005
+[19-03-2024 15:14:51] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[20-03-2024 17:19:31] info: 	Server listening on http://localhost:5005
+[20-03-2024 17:19:31] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[20-03-2024 17:19:40] error: 	ERROR
+[20-03-2024 17:21:53] error: 	ERROR
+[20-03-2024 17:22:03] info: 	req.payload
+[21-03-2024 10:35:11] info: 	Server listening on http://localhost:5005
+[21-03-2024 10:35:11] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 10:35:22] error: 	ERROR
+[21-03-2024 10:35:30] error: 	ERROR
+[21-03-2024 10:38:19] info: 	req.payload
+[21-03-2024 10:38:22] info: 	req.payload
+[21-03-2024 10:42:53] info: 	req.payload
+[21-03-2024 10:42:57] info: 	req.payload
+[21-03-2024 10:49:04] info: 	req.payload
+[21-03-2024 11:24:53] info: 	Server listening on http://localhost:5005
+[21-03-2024 11:24:53] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 11:34:48] info: 	req.payload
+[21-03-2024 12:25:41] info: 	req.payload
+[21-03-2024 12:26:49] info: 	req.payload
+[21-03-2024 12:34:39] info: 	req.payload
+[21-03-2024 12:40:19] info: 	Server listening on http://localhost:5005
+[21-03-2024 12:40:19] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 12:47:17] info: 	req.payload
+[21-03-2024 12:55:10] info: 	Server listening on http://localhost:5005
+[21-03-2024 12:55:10] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 12:58:06] info: 	Server listening on http://localhost:5005
+[21-03-2024 12:58:06] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 12:59:54] info: 	Server listening on http://localhost:5005
+[21-03-2024 12:59:55] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 13:07:33] error: 	Error validating the password reset token:  validateToken is not defined
+[21-03-2024 15:14:23] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:14:24] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:16:06] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:16:06] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:40:36] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:40:36] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:40:59] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:40:59] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:41:45] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:41:45] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:43:22] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:43:22] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:46:17] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:46:17] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:47:43] info: 	Server listening on http://localhost:5005
+[21-03-2024 15:47:44] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[21-03-2024 15:54:26] error: 	jwt malformed
+[21-03-2024 15:54:35] error: 	jwt malformed
+[22-03-2024 10:55:29] info: 	Server listening on http://localhost:5005
+[22-03-2024 10:55:29] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[22-03-2024 10:55:47] error: 	ERROR
+[22-03-2024 10:55:53] info: 	req.payload
