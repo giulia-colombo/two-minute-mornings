@@ -40,6 +40,10 @@ class AuthService {
   validatePswResetToken = pswResetToken => {
     return this.api.get(`auth/psw-reset/validate/${pswResetToken}`);
   };
+
+  sumbitNewPsw = newPsw => {
+    return this.api.post(`auth/psw-reset/update`, newPsw);
+  };
 }
 
 // Create one instance (object) of the service
