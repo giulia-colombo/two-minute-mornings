@@ -24,3 +24,15 @@ a {
   font-weight: bold;
   text-align: center;
 }
+
+.myBorder {
+  border: 3px solid rgba($primary, 0.5);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.myBorderDark {
+  border: 3px solid $dark;
+  border-radius: 12px;
+  padding: 1rem;
+}

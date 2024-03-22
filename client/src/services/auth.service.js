@@ -36,6 +36,10 @@ class AuthService {
     // same as
     // return axios.post("http://localhost:5005/auth/verify");
   };
+
+  validatePswResetToken = pswResetToken => {
+    return this.api.get(`auth/psw-reset/validate/${pswResetToken}`);
+  };
 }
 
 // Create one instance (object) of the service

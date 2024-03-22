@@ -8,11 +8,12 @@ const GenericForm = ({
   type,
   name,
   placeholder,
+  formText,
   successMessageTemplate,
   errorMessageTemplate,
   initialFormData,
 }) => {
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState(initialFormData || '');
   const [currentErrorMessage, setCurrentErrorMessage] = useState('');
   const [currentSuccessMessage, setCurrentSuccessMessage] = useState('');
 
@@ -38,6 +39,7 @@ const GenericForm = ({
         <Form onSubmit={onSubmit}>
           <Form.Group className="my-2 py-3" controlId={name}>
             <Form.Label className="fw-bold">{label}</Form.Label>
+            <Form.Text>{formText}</Form.Text>
             <Form.Control
               type={type}
               name={name}
@@ -53,12 +55,12 @@ const GenericForm = ({
         </Form>
       </div>
       {currentErrorMessage && (
-        <div>
+        <div className="my-3">
           <p className="errorMessage">{currentErrorMessage}</p>
         </div>
       )}
       {currentSuccessMessage && (
-        <div>
+        <div className="my-3">
           <p className="successMessage">{currentSuccessMessage}</p>
         </div>
       )}

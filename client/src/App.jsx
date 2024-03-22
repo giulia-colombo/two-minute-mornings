@@ -12,6 +12,7 @@ import DiaryPage from './pages/DiaryPage/DiaryPage.jsx';
 import TodayPage from './pages/TodayPage/TodayPage.jsx';
 import StatsPage from './pages/StatsPage/StatsPage.jsx';
 import EditUserPage from './pages/EditUserPage/EditUserPage.jsx';
+import PswResetPage from './pages/PswResetPage/PswResetPage.jsx';
 
 import Navbar from './components/Navbar/Navbar';
 import IsPrivate from './components/IsPrivate/IsPrivate';
@@ -85,6 +86,15 @@ function App() {
           element={
             <IsPrivate>
               <StatsPage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/password-reset"
+          element={
+            <IsPrivate>
+              <PswResetPage />
             </IsPrivate>
           }
         />
