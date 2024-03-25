@@ -77,3 +77,16 @@ export const sendPswResetEmail = (toEmail, userName, pswResetURL) => {
 
   _sendEmail(pswResetEmailDetails);
 };
+
+export const sendUpdatedPswEmail = (toEmail, userName) => {
+  const updatedPswEmailConfig = {
+    subject: 'Two Minute Mornings - Your password has been updated',
+    htmlContent: `<p>Hi ${userName}, we wanted to let you know that the password for your Two Minute Mornings account has been successfully updated. If this wasn't you, please make the appropriate security checks.</p>`,
+    userName,
+    toEmail,
+  };
+
+  const updatedPswEmailDetails = createEmailDetails(updatedPswEmailConfig);
+
+  _sendEmail(updatedPswEmailDetails);
+};

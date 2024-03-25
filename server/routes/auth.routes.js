@@ -22,6 +22,7 @@ import { isAuthenticated } from '../middleware/jwt.middleware.js';
 //   sendWelcomeEmail,
 // } = require('../utils/notifications/emailNotifications');
 import { sendWelcomeEmail } from '../utils/emailNotifications.js';
+import { sendUpdatedPswEmail } from '../utils/emailNotifications.js';
 
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
@@ -32,14 +33,19 @@ router.post('/signup', (req, res, next) => {
 
   // Check if email or password or name are provided as empty strings
   if (email === '' || password === '' || name === '') {
-    res.status(400).json({ message: 'Provide email, password and name' });
+    res
+      .status(400)
+      .json({ success: false, message: 'Provide email, password and name' });
     return;
   }
 
   // This regular expression check that the email is of a valid format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(email)) {
-    res.status(400).json({ message: 'Provide a valid email address.' });
+    res.status(400).json({
+      success: false,
+      message: 'Provide a valid email address.',
+    });
     return;
   }
 
@@ -47,6 +53,7 @@ router.post('/signup', (req, res, next) => {
   const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!passwordRegex.test(password)) {
     res.status(400).json({
+      success: false,
       message:
         'Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.',
     });
@@ -58,7 +65,8 @@ router.post('/signup', (req, res, next) => {
     .then(foundUser => {
       // If the user with the same email already exists, send an error response
       if (foundUser) {
-        res.status(400).json({ message: 'User already exists.' });
+        success: false,
+          res.status(400).json({ message: 'User already exists.' });
         return;
       }
 
@@ -79,7 +87,7 @@ router.post('/signup', (req, res, next) => {
       const user = { email, name, _id };
 
       // Send a json response containing the user object
-      res.status(201).json({ user: user });
+      res.status(201).json({ success: true, user: user });
     })
     .catch(err => next(err)); // In this case, we send error handling to the error handling middleware.
 
@@ -92,7 +100,9 @@ router.post('/login', (req, res, next) => {
 
   // Check if email or password are provided as empty string
   if (email === '' || password === '') {
-    res.status(400).json({ message: 'Provide email and password.' });
+    res
+      .status(400)
+      .json({ success: false, message: 'Provide email and password.' });
     return;
   }
 
@@ -101,7 +111,7 @@ router.post('/login', (req, res, next) => {
     .then(foundUser => {
       if (!foundUser) {
         // If the user is not found, send an error response
-        res.status(401).json({ message: 'User not found.' });
+        res.status(401).json({ success: false, message: 'User not found.' });
         return;
       }
 
@@ -125,9 +135,11 @@ router.post('/login', (req, res, next) => {
         });
 
         // Send the token as the response
-        res.status(200).json({ authToken: authToken });
+        res.status(200).json({ success: true, authToken: authToken });
       } else {
-        res.status(401).json({ message: 'Unable to authenticate the user' });
+        res
+          .status(401)
+          .json({ success: false, message: 'Unable to authenticate the user' });
       }
     })
     .catch(err => next(err)); // In this case, we send error handling to the error handling middleware.
@@ -140,7 +152,7 @@ router.get('/verify', isAuthenticated, (req, res, next) => {
   logger.info(`req.payload`, req.payload);
 
   // Send back the token payload object containing the user data
-  res.status(200).json(req.payload);
+  res.status(200).json({ success: true, payload: req.payload });
 });
 
 router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
@@ -151,7 +163,10 @@ router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
   try {
     const foundUser = await User.findOne({ email });
     if (!foundUser) {
-      res.status(400).json({ message: "Couldn't find email in the database." });
+      res.status(400).json({
+        success: false,
+        message: "Couldn't find email in the database.",
+      });
     }
 
     // Grab id and name from the user object.
@@ -175,12 +190,13 @@ router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
     await sendPswResetEmail(email, pswResetURL);
 
     // Send the token as the response
-    res
-      .status(200)
-      .json({ message: 'Password reset email sent successfully.' });
+    res.status(200).json({
+      success: true,
+      message: 'Password reset email sent successfully.',
+    });
   } catch (err) {
     logger.error('Error rietriving user in the database. ', err);
-    res.status(500).json({ message: 'Internal server error.' });
+    res.status(500).json({ success: false, message: 'Internal server error.' });
   }
 });
 
@@ -196,15 +212,17 @@ router.get(
       // 2. Check validity of token:
       jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
       // 3. Send back a response to the frontend that communicates that the token is still valid
-      res
-        .status(200)
-        .json({ message: 'Password reset token has been validated.' });
+      res.status(200).json({
+        success: true,
+        message: 'Password reset token has been validated.',
+      });
     } catch (err) {
       // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
       logger.error('Could not validate password reset token: ', err);
-      res
-        .status(500)
-        .json({ message: 'Password reset token is invalid or has expired.' });
+      res.status(500).json({
+        success: false,
+        message: 'Password reset token is invalid or has expired.',
+      });
     }
   }
 );
@@ -222,7 +240,7 @@ router.put('/psw-reset/update', isAuthenticated, async (req, res, next) => {
 
     // 3a. If a user is not found, send back error.
     if (!foundUser) {
-      res.status(404).json({ message: 'User not found.' });
+      res.status(404).json({ success: false, message: 'User not found.' });
       return;
     }
 
@@ -230,6 +248,7 @@ router.put('/psw-reset/update', isAuthenticated, async (req, res, next) => {
     const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     if (!passwordRegex.test(newPsw)) {
       res.status(400).json({
+        success: false,
         message:
           'Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.',
       });
@@ -242,13 +261,42 @@ router.put('/psw-reset/update', isAuthenticated, async (req, res, next) => {
     foundUser.password = hashedPassword;
     // 6. do we need to save the user again??
     await foundUser.save();
-    // 7. send an email that the password has been updated? or can we just show a success message in the UI?
-    res.status(200).json({ message: 'Password updated successfully.' });
+    // 7. send an email that the password has been updated
+    sendUpdatedPswEmail(foundUser.email, foundUser.name);
+    // 8. Show a success message in the UI?
+    res
+      .status(200)
+      .json({ success: true, message: 'Password updated successfully.' });
   } catch (err) {
     logger.error(err);
-    res
-      .status(500)
-      .json({ message: 'Error updating password. Please try again later.' });
+    res.status(500).json({
+      success: false,
+      message: 'Error updating password. Please try again later.',
+    });
   }
 });
+
+router.put('/username/update', isAuthenticated, async (req, res, next) => {
+  try {
+    const { email } = req.payload;
+    const newUsername = req.body.username;
+
+    const foundUser = await User.findOne({ email });
+
+    foundUser.name = newUsername;
+
+    await foundUser.save();
+    res.status(200).json({
+      success: true,
+      message: 'Username updated successfully.',
+    });
+  } catch (err) {
+    logger.error(err);
+    res.status(500).json({
+      success: false,
+      message: 'Error updating username. Please try again later.',
+    });
+  }
+});
+
 export default router;
