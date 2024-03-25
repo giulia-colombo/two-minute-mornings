@@ -12,6 +12,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function ProfilePage() {
   const { user } = useContext(AuthContext);
+  console.log('user: ', user);
 
   const [successMessage, setSuccessMessage] = useState(null);
   const [error, setError] = useState(null);
@@ -42,7 +43,7 @@ function ProfilePage() {
         alt="profile-pic"
       />
 
-      <h4 className="my-4">Welcome back, {user.name}!</h4>
+      <h4 className="my-4">Welcome back, {user.payload.name}!</h4>
 
       <div>
         <Button className="me-2" onClick={() => navigate('/edit-user')}>

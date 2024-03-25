@@ -15,7 +15,8 @@ const EditUserPage = () => {
 
   const updateUsername = async formData => {
     try {
-      console.log(formData);
+      console.log('formData: ', formData);
+      await authService.submitNewUsername({ username: formData });
     } catch (err) {
       console.error('Error while attempting to initiate password reset: ', err);
     }
@@ -23,7 +24,8 @@ const EditUserPage = () => {
 
   const confirmEmail = async formData => {
     try {
-      await authService.api.post(`/auth/password-reset/initiate`, {
+      console.log('formData: ', formData);
+      await authService.initiatePswReset({
         email: formData,
       });
     } catch (err) {

@@ -41,8 +41,16 @@ class AuthService {
     return this.api.get(`auth/psw-reset/validate/${pswResetToken}`);
   };
 
-  sumbitNewPsw = newPsw => {
-    return this.api.post(`auth/psw-reset/update`, newPsw);
+  initiatePswReset = email => {
+    return this.api.post(`auth/psw-reset/initiate`, email);
+  };
+
+  submitNewPsw = newPsw => {
+    return this.api.put(`auth/psw-reset/update`, newPsw);
+  };
+
+  submitNewUsername = newUsername => {
+    return this.api.put(`auth/username/update`, newUsername);
   };
 }
 
