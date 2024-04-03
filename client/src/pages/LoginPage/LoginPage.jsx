@@ -3,11 +3,13 @@ import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
 import authService from '../../services/auth.service';
+import GenericForm from '../../components/GenericForm/GenericForm';
+import Button from 'react-bootstrap/esm/Button';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
 
@@ -43,29 +45,69 @@ function LoginPage() {
         setErrorMessage(errorDescription);
       });
   };
+  const confirmEmail = async formData => {
+    try {
+      console.log('formData: ', formData);
+      await authService.initiatePswReset({
+        email: formData,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const confirmEmailProps = {
+    handleSubmit: confirmEmail,
+    type: 'email',
+    name: 'email',
+    placeholder: 'Your email address',
+    formText:
+      'Confirm your email below. If it exists in our database, you will receive a link to reset your password. The link is valid for 24 hours.',
+    successMessageTemplate: 'Email address submitted successfully.',
+    errorMessageTemplate: 'Failed to submit email address.',
+  };
 
   return (
     <div className="LoginPage container">
       <h1>Login</h1>
+      <div className="my-3">
+        <form onSubmit={handleLoginSubmit}>
+          <div className="my-3">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+          <div className="my-3">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <Button type="submit" variant="primary">
+            Login
+          </Button>
+        </form>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+      </div>
 
-        <button type="submit">Login</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div className="my-3">
+        <h6>Don't have an account yet?</h6>
+        <Link to={'/signup'}> Sign Up</Link>
+      </div>
 
-      <p>Don't have an account yet?</p>
-      <Link to={'/signup'}> Sign Up</Link>
+      <div className="my-3">
+        <h6>Forgot your password?</h6>
+        <GenericForm {...confirmEmailProps}></GenericForm>
+      </div>
     </div>
   );
 }

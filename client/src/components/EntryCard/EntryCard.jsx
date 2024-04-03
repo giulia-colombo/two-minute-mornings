@@ -15,6 +15,7 @@ function EntryCard({
 }) {
   const { focusPrompt, gratefulPrompt, letGoPrompt, createdAt } = entry;
   const { user } = useContext(AuthContext);
+  console.log('CURRENT USER: ', user);
 
   const dateObj = new Date(Date.parse(createdAt));
   const readableDate = format(dateObj, 'EEEE, do MMMM yyyy');
@@ -59,7 +60,7 @@ function EntryCard({
         </Card.Subtitle>
         <Card.Text className="text-center">{letGoPrompt}</Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted">by {user.name} </Card.Footer>
+      <Card.Footer className="text-muted">by {user.payload.name} </Card.Footer>
 
       <div className="my-3">
         <Button

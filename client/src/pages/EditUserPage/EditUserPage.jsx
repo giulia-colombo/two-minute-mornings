@@ -11,14 +11,22 @@ import authService from '../../services/auth.service';
 // 3. upload field for profile pciture
 
 const EditUserPage = () => {
-  const { user } = useContext(AuthContext);
+  const { user, updateUserData } = useContext(AuthContext);
 
   const updateUsername = async formData => {
     try {
       console.log('formData: ', formData);
-      await authService.submitNewUsername({ username: formData });
+      const response = await authService.submitNewUsername({
+        username: formData,
+      });
+      console.log('response object: ', response);
+      if (response.data.success) {
+        await updateUserData();
+      } else {
+        console.error('Failed to update username.');
+      }
     } catch (err) {
-      console.error('Error while attempting to initiate password reset: ', err);
+      console.error('Error while attempting to update username: ', err);
     }
   };
 
@@ -39,7 +47,8 @@ const EditUserPage = () => {
     name: 'username',
     placeholder: 'Your new username',
     formText: 'Type your new username below. Click submit to confirm.',
-    successMessageTemplate: 'Username submitted successfully.',
+    successMessageTemplate:
+      'Username submitted successfully. Please log out and log back in for changes to take effect.',
     errorMessageTemplate: 'Failed to submit username.',
     initialFormData: user.name,
   };
