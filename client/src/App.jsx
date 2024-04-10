@@ -90,14 +90,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/password-reset"
-          element={
-            <IsPrivate>
-              <PswResetPage />
-            </IsPrivate>
-          }
-        />
+        <Route path="/password-reset/:token" element={<PswResetPage />} />
       </Routes>
     </div>
   );

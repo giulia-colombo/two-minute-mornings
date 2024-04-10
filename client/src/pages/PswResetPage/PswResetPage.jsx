@@ -3,17 +3,19 @@ import { useParams } from 'react-router-dom';
 import GenericForm from '../../components/GenericForm/GenericForm';
 import authService from '../../services/auth.service';
 
-const PswResetPage = async () => {
+const PswResetPage = () => {
   //TO DO:
   // 1. Parse token from URL
-  const { parsedToken } = useParams();
+  const { token } = useParams();
+  console.log('token from url: ', token);
   const [tokenStatus, setTokenStatus] = useState('validating');
   // 2. Make API call to a backend endpoint that takes the token and checks its validity
   useEffect(() => {
     const validateToken = async () => {
       try {
         // 4. If the token has been validated, show password reset form
-        await authService.validatePswResetToken(parsedToken);
+
+        await authService.validatePswResetToken(token);
         setTokenStatus('valid');
       } catch (err) {
         console.error('Could not validate password reset token: ', err);

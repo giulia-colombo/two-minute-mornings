@@ -101,13 +101,17 @@ function DiaryPage() {
         </div>
       )}
       {successMessage && (
-        <div>
+        <div className="my-3">
           <span>{successMessage}</span>
         </div>
       )}
       {entries.length > 0 ? (
         <Container className="d-flex flex-wrap ">{EntryCardItems}</Container>
-      ) : null}
+      ) : (
+        <p>
+          You haven't written any entries yet. Go journal and then come back!{' '}
+        </p>
+      )}
     </>
   );
 }

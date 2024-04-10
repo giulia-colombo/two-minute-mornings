@@ -70,8 +70,11 @@ function LoginPage() {
   return (
     <div className="LoginPage container">
       <h1>Login</h1>
-      <div className="my-3">
-        <form onSubmit={handleLoginSubmit}>
+      <div>
+        <form
+          onSubmit={handleLoginSubmit}
+          className="my-3 d-flex flex-column align-items-center justify-content-center"
+        >
           <div className="my-3">
             <label>Email:</label>
             <input

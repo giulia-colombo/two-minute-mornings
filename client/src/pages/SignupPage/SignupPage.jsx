@@ -2,6 +2,7 @@ import './SignupPage.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import authService from '../../services/auth.service';
+import Button from 'react-bootstrap/esm/Button';
 
 function SignupPage() {
   const [email, setEmail] = useState('');
@@ -48,29 +49,48 @@ function SignupPage() {
   return (
     <div className="SignupPage container">
       <h1>Sign Up</h1>
+      <div>
+        <form
+          onSubmit={handleSignupSubmit}
+          className="my-3 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div className="my-3">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+          <div className="my-3">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <div className="my-3">
+            <label>Name:</label>
+            <input type="text" name="name" value={name} onChange={handleName} />
+          </div>
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+          <Button type="submit" variant="primary" className="my-2">
+            Sign up
+          </Button>
+        </form>
 
-        <button type="submit">Sign Up</button>
-      </form>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+      </div>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link to={'/login'}> Login</Link>
+      <div className="d-flex flex-column align-items-center my-3">
+        <p>Already have an account?</p>
+        <Link to={'/login'}> Login</Link>
+      </div>
     </div>
   );
 }
