@@ -1120,3 +1120,164 @@
 [25-03-2024 18:32:28] info: 	req.payload
 [25-03-2024 18:32:32] info: 	req.payload
 [25-03-2024 18:32:41] info: 	req.payload
+[26-03-2024 14:02:09] info: 	Server listening on http://localhost:5005
+[26-03-2024 14:02:09] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[26-03-2024 14:02:22] error: 	ERROR
+[26-03-2024 14:02:27] error: 	ERROR
+[26-03-2024 14:02:32] info: 	req.payload
+[26-03-2024 14:02:41] info: 	req.payload
+[26-03-2024 14:50:37] info: 	req.payload
+[26-03-2024 14:50:51] info: 	req.payload
+[26-03-2024 15:06:16] info: 	req.payload
+[26-03-2024 15:07:02] info: 	req.payload
+[27-03-2024 16:21:30] info: 	Server listening on http://localhost:5005
+[27-03-2024 16:21:30] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[27-03-2024 16:21:39] error: 	ERROR
+[27-03-2024 16:24:23] error: 	ERROR
+[27-03-2024 16:24:29] info: 	req.payload
+[27-03-2024 16:41:25] info: 	req.payload
+[27-03-2024 17:50:27] info: 	Server listening on http://localhost:5005
+[27-03-2024 17:50:27] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[27-03-2024 17:50:50] info: 	Server listening on http://localhost:5005
+[27-03-2024 17:50:50] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[02-04-2024 10:25:03] info: 	Server listening on http://localhost:5005
+[02-04-2024 10:25:03] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[02-04-2024 10:25:12] error: 	ERROR
+[02-04-2024 10:28:58] error: 	ERROR
+[02-04-2024 10:29:07] info: 	req.payload
+[02-04-2024 10:35:01] info: 	req.payload
+[02-04-2024 10:35:19] info: 	req.payload
+[02-04-2024 10:35:24] info: 	req.payload
+[02-04-2024 10:35:44] info: 	req.payload
+[02-04-2024 10:35:47] info: 	req.payload
+[02-04-2024 10:40:25] info: 	req.payload
+[02-04-2024 10:44:08] info: 	req.payload
+[02-04-2024 10:44:14] info: 	req.payload
+[02-04-2024 10:45:50] info: 	req.payload
+[02-04-2024 10:47:37] info: 	req.payload
+[02-04-2024 10:52:51] info: 	req.payload
+[02-04-2024 10:53:18] info: 	req.payload
+[02-04-2024 11:02:51] info: 	req.payload
+[02-04-2024 11:07:54] info: 	req.payload
+[02-04-2024 11:12:13] info: 	req.payload
+[02-04-2024 11:16:30] info: 	req.payload
+[02-04-2024 11:16:40] info: 	req.payload
+[02-04-2024 11:18:00] info: 	req.payload
+[02-04-2024 11:18:11] info: 	req.payload
+[02-04-2024 12:29:38] info: 	Server listening on http://localhost:5005
+[02-04-2024 12:29:38] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[02-04-2024 12:30:28] info: 	Server listening on http://localhost:5005
+[02-04-2024 12:30:28] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[02-04-2024 12:32:39] info: 	req.payload
+[03-04-2024 10:27:29] info: 	Server listening on http://localhost:5005
+[03-04-2024 10:27:29] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 10:27:44] error: 	ERROR
+[03-04-2024 11:23:00] error: 	ERROR
+[03-04-2024 11:24:31] error: 	ERROR
+[03-04-2024 11:34:44] error: 	ERROR
+[03-04-2024 11:34:53] info: 	req.payload
+[03-04-2024 11:34:58] info: 	req.payload
+[03-04-2024 11:35:04] info: 	req.payload
+[03-04-2024 11:35:07] info: 	req.payload
+[03-04-2024 11:35:16] info: 	req.payload
+[03-04-2024 11:35:22] info: 	req.payload
+[03-04-2024 11:35:26] info: 	req.payload
+[03-04-2024 11:38:30] info: 	req.payload
+[03-04-2024 11:50:59] info: 	req.payload
+[03-04-2024 12:04:55] info: 	Server listening on http://localhost:5005
+[03-04-2024 12:04:55] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 12:05:17] info: 	Server listening on http://localhost:5005
+[03-04-2024 12:05:17] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 12:05:23] info: 	req.payload
+[03-04-2024 12:05:27] info: 	req.payload
+[03-04-2024 12:05:40] info: 	Fetching user data...
+[03-04-2024 12:05:40] info: 	Fetching user data - inside TRY BLOCK
+[03-04-2024 12:13:07] info: 	Server listening on http://localhost:5005
+[03-04-2024 12:13:07] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 12:13:21] info: 	req.payload
+[03-04-2024 12:13:24] info: 	req.payload
+[03-04-2024 12:14:25] info: 	req.payload
+[03-04-2024 12:14:29] info: 	req.payload
+[03-04-2024 12:14:48] info: 	req.payload
+[03-04-2024 12:14:57] info: 	Fetching user data...
+[03-04-2024 12:14:57] info: 	Fetching user data - inside TRY BLOCK
+[03-04-2024 12:17:09] info: 	Server listening on http://localhost:5005
+[03-04-2024 12:17:09] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 12:17:13] info: 	req.payload
+[03-04-2024 12:27:00] info: 	req.payload
+[03-04-2024 12:27:10] info: 	req.payload
+[03-04-2024 12:27:24] info: 	Server listening on http://localhost:5005
+[03-04-2024 12:27:24] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 12:27:35] info: 	req.payload
+[03-04-2024 12:27:38] info: 	req.payload
+[03-04-2024 12:27:45] info: 	req.payload
+[03-04-2024 12:29:49] info: 	req.payload
+[03-04-2024 13:05:43] error: 	ERROR
+[03-04-2024 16:59:23] info: 	Sending welcome email to giulia.colombo.127@gmail.com with name Giulia
+[03-04-2024 16:59:44] info: 	req.payload
+[03-04-2024 16:59:49] info: 	req.payload
+[03-04-2024 16:59:55] info: 	req.payload
+[03-04-2024 17:00:03] info: 	req.payload
+[03-04-2024 17:00:05] info: 	req.payload
+[03-04-2024 17:03:21] info: 	req.payload
+[03-04-2024 17:03:34] error: 	Error rietriving user in the database.  sendPswResetEmail is not defined
+[03-04-2024 17:26:05] info: 	Server listening on http://localhost:5005
+[03-04-2024 17:26:05] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 17:26:16] info: 	req.payload
+[03-04-2024 17:26:33] info: 	req.payload
+[03-04-2024 17:26:39] info: 	req.payload
+[03-04-2024 17:27:17] info: 	req.body ===> 
+[03-04-2024 17:31:17] info: 	req.payload
+[03-04-2024 17:33:54] info: 	req.payload
+[03-04-2024 17:34:18] info: 	req.payload
+[03-04-2024 17:41:00] info: 	Server listening on http://localhost:5005
+[03-04-2024 17:41:00] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 17:50:25] info: 	Server listening on http://localhost:5005
+[03-04-2024 17:50:25] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[03-04-2024 17:55:30] info: 	Server listening on http://localhost:5005
+[03-04-2024 17:55:30] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 16:05:45] info: 	Server listening on http://localhost:5005
+[09-04-2024 16:05:45] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 16:05:56] error: 	ERROR
+[09-04-2024 16:06:07] error: 	ERROR
+[09-04-2024 16:06:24] info: 	req.payload
+[09-04-2024 16:06:29] info: 	req.payload
+[09-04-2024 16:14:09] info: 	Server listening on http://localhost:5005
+[09-04-2024 16:14:09] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 16:17:24] info: 	Server listening on http://localhost:5005
+[09-04-2024 16:17:24] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 16:19:46] info: 	Server listening on http://localhost:5005
+[09-04-2024 16:19:46] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 16:30:17] info: 	Server listening on http://localhost:5005
+[09-04-2024 16:30:17] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:23:28] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:23:28] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:29:45] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:29:45] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:30:00] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:30:00] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:37:41] info: 	req.payload
+[09-04-2024 17:52:03] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:52:03] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:52:04] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:52:05] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:52:08] info: 	req.payload
+[09-04-2024 17:52:43] info: 	req.payload
+[09-04-2024 17:55:51] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:55:51] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:57:27] info: 	Server listening on http://localhost:5005
+[09-04-2024 17:57:27] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[09-04-2024 17:58:06] info: 	req.payload
+[10-04-2024 15:01:35] info: 	Server listening on http://localhost:5005
+[10-04-2024 15:01:35] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[10-04-2024 15:01:44] error: 	ERROR
+[10-04-2024 15:03:44] error: 	ERROR
+[10-04-2024 15:04:12] error: 	ERROR
+[10-04-2024 15:06:23] info: 	Server listening on http://localhost:5005
+[10-04-2024 15:06:23] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[10-04-2024 15:07:49] info: 	Server listening on http://localhost:5005
+[10-04-2024 15:07:49] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[10-04-2024 15:24:51] error: 	ERROR
+[10-04-2024 15:33:38] info: 	Server listening on http://localhost:5005
+[10-04-2024 15:33:38] info: 	Connected to Mongo! Database name: "two-minute-mornings"
+[10-04-2024 15:35:32] error: 	ERROR

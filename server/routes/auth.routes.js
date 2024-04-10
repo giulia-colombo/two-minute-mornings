@@ -22,7 +22,10 @@ import { isAuthenticated } from '../middleware/jwt.middleware.js';
 //   sendWelcomeEmail,
 // } = require('../utils/notifications/emailNotifications');
 import { sendWelcomeEmail } from '../utils/emailNotifications.js';
-import { sendUpdatedPswEmail } from '../utils/emailNotifications.js';
+import {
+  sendUpdatedPswEmail,
+  sendPswResetEmail,
+} from '../utils/emailNotifications.js';
 
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
@@ -155,7 +158,7 @@ router.get('/verify', isAuthenticated, (req, res, next) => {
   res.status(200).json({ success: true, payload: req.payload });
 });
 
-router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
+router.post('/psw-reset/initiate', async (req, res) => {
   // Grab the email the user has inserted in the frontend via req.body
   const { email } = req.body;
 
@@ -186,7 +189,8 @@ router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
 
     const pswResetURL = `${process.env.ORIGIN}/password-reset/${pswResetToken}`;
 
-    //TO DO: code sendPswResetEmail
+    console.log('Password reset URL: 🚨', pswResetURL);
+
     await sendPswResetEmail(email, pswResetURL);
 
     // Send the token as the response
@@ -200,34 +204,34 @@ router.post('/psw-reset/initiate', isAuthenticated, async (req, res, next) => {
   }
 });
 
-router.get(
-  '/psw-reset/validate/:psw-reset-token',
-  isAuthenticated,
-  (req, res, next) => {
-    // TO DO
-    // 1. grab the token from req.params
-    const { 'psw-reset-token': pswResetToken } = req.params;
+router.get('/psw-reset/validate/:psw-reset-token', (req, res) => {
+  // TO DO
+  console.log("'/psw-reset/validate/:psw-reset-token route is reached ✅");
+  // 1. grab the token from req.params
+  const { 'psw-reset-token': pswResetToken } = req.params;
 
-    try {
-      // 2. Check validity of token:
-      jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
-      // 3. Send back a response to the frontend that communicates that the token is still valid
-      res.status(200).json({
-        success: true,
-        message: 'Password reset token has been validated.',
-      });
-    } catch (err) {
-      // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
-      logger.error('Could not validate password reset token: ', err);
-      res.status(500).json({
-        success: false,
-        message: 'Password reset token is invalid or has expired.',
-      });
-    }
+  console.log('Received token for validation 🪙', pswResetToken);
+  try {
+    // 2. Check validity of token:
+    console.log('Attempting to verify token: ⏳', pswResetToken);
+    jwt.verify(pswResetToken, process.env.TOKEN_SECRET);
+    // 3. Send back a response to the frontend that communicates that the token is still valid
+    console.log('Token verified successfully ✅');
+    res.status(200).json({
+      success: true,
+      message: 'Password reset token has been validated.',
+    });
+  } catch (err) {
+    // 4. OR Send back a response to the frontend that communicates that the token is not valid anymore
+    logger.error('Could not validate password reset token: ', err);
+    res.status(500).json({
+      success: false,
+      message: 'Password reset token is invalid or has expired.',
+    });
   }
-);
+});
 
-router.put('/psw-reset/update', isAuthenticated, async (req, res, next) => {
+router.put('/psw-reset/update', async (req, res) => {
   //TO DO
   // 0. grab token containing data about the user
   const { email } = req.payload;
@@ -281,14 +285,16 @@ router.put('/username/update', isAuthenticated, async (req, res, next) => {
     const { email } = req.payload;
     const newUsername = req.body.username;
 
-    const foundUser = await User.findOne({ email });
+    const foundUser = await User.findOneAndUpdate(
+      { email },
+      { name: newUsername },
+      { new: true }
+    );
 
-    foundUser.name = newUsername;
-
-    await foundUser.save();
     res.status(200).json({
       success: true,
       message: 'Username updated successfully.',
+      user: foundUser,
     });
   } catch (err) {
     logger.error(err);

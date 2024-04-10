@@ -3,19 +3,21 @@ import logger from '../logs/logger.js';
 import SibApiV3Sdk from 'sib-api-v3-sdk'; // NOTE this might not work since SIB name changed to Brevo
 // TO DO: pass down user details (use jwt middleware?)
 
-const _sendEmail = emailDetails => {
-  const defaultClient = SibApiV3Sdk.ApiClient.instance; // REVIEW is this called defaultClient because we use this object to make requests to the Sendinblue API?
+const _sendEmail = async emailDetails => {
+  try {
+    const defaultClient = SibApiV3Sdk.ApiClient.instance; // REVIEW is this called defaultClient because we use this object to make requests to the Sendinblue API?
 
-  const apiKey = defaultClient.authentications['api-key']; // REVIEW how does this compare to making API calls to a URL? Also, we're using bracket notation here, why?
-  apiKey.apiKey = process.env.SENDINBLUE_API_KEY; // REVIEW why are API keys necessary? is it just for public APIs? is it  when we want to make post/put/delete requests? or something else?
+    const apiKey = defaultClient.authentications['api-key']; // REVIEW how does this compare to making API calls to a URL? Also, we're using bracket notation here, why?
+    apiKey.apiKey = process.env.SENDINBLUE_API_KEY; // REVIEW why are API keys necessary? is it just for public APIs? is it  when we want to make post/put/delete requests? or something else?
 
-  const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi(); // REVIEW let's really understand this line
+    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi(); // REVIEW let's really understand this line
 
-  // REVIEW is the below a higher-order function - since it returns a function?
-  return apiInstance.sendTransacEmail(emailDetails).catch(err => {
+    // REVIEW is the below a higher-order function - since it returns a function?
+    return apiInstance.sendTransacEmail(emailDetails);
+  } catch (err) {
     logger.error('Error sending email: ', err);
     throw err;
-  });
+  }
 };
 
 export const sendReminderEmail = (toEmail, userName) => {
@@ -65,10 +67,10 @@ const createEmailDetails = ({ subject, htmlContent, userName, toEmail }) => {
   return emailDetails;
 };
 
-export const sendPswResetEmail = (toEmail, userName, pswResetURL) => {
+export const sendPswResetEmail = async (toEmail, userName, pswResetURL) => {
   const pswResetEmailConfig = {
     subject: 'Two Minute Mornings - Password reset link',
-    htmlContent: `<p>Please click on the following link to reset your password: <a href=${pswResetURL}>Password reset</a></p>.`,
+    htmlContent: `<p>Please click on the following link to reset your password: <a href=${pswResetURL}>Password reset</a>.</p>`,
     userName,
     toEmail,
   };
