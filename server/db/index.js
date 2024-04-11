@@ -10,12 +10,24 @@ import logger from '../logs/logger.js';
 const MONGO_URI =
   process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/two-minute-mornings';
 
-mongoose
-  .connect(MONGO_URI)
-  .then(x => {
-    const dbName = x.connections[0].name;
+// mongoose
+//   .connect(MONGO_URI)
+//   .then(x => {
+//     const dbName = x.connections[0].name;
+//     logger.info(`Connected to Mongo! Database name: "${dbName}"`);
+//   })
+//   .catch(err => {
+//     logger.error('Error connecting to mongo: ', err);
+//   });
+
+const connectDB = async () => {
+  try {
+    const connection = await mongoose.connect(MONGO_URI);
+    const dbName = connection.connections[0].name;
     logger.info(`Connected to Mongo! Database name: "${dbName}"`);
-  })
-  .catch(err => {
-    logger.error('Error connecting to mongo: ', err);
-  });
+  } catch (err) {
+    logger.error(`Error connecting to Mongo: `, err);
+  }
+};
+
+export default connectDB;
