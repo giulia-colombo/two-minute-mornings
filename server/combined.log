@@ -1281,3 +1281,11 @@
 [10-04-2024 15:33:38] info: 	Server listening on http://localhost:5005
 [10-04-2024 15:33:38] info: 	Connected to Mongo! Database name: "two-minute-mornings"
 [10-04-2024 15:35:32] error: 	ERROR
+[12-04-2024 10:07:56] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 10:07:56] info: 	Server listening on http://localhost:5005
+[12-04-2024 10:08:14] error: 	ERROR
+[12-04-2024 10:17:21] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 10:17:21] info: 	Server listening on http://localhost:5005
+[12-04-2024 10:25:00] error: 	Caught exception: ReferenceError: FRONTEND_URL is not defined. Exception origin: unhandledRejection
+[12-04-2024 10:26:34] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 10:26:34] info: 	Server listening on http://localhost:5005

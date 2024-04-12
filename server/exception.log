@@ -68,3 +68,12 @@ This file is being treated as an ES module because it has a '.js' file extension
     at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
     at async loadESM (node:internal/process/esm_loader:91:5)
     at async handleMainPromise (node:internal/modules/run_main:65:12)
+[12-04-2024 10:25:00] error: 	uncaughtException: FRONTEND_URL is not defined
+ReferenceError: FRONTEND_URL is not defined
+    at default (file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/config/index.js:32:15)
+    at file:///Users/giuliacolombo/Documents/Giulia/coding-projects/two-minute-mornings/server/app.js:30:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
