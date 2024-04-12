@@ -17,7 +17,7 @@ import cookieParser from 'cookie-parser';
 // const cors = require('cors');
 import cors from 'cors';
 
-// const FRONTEND_URL = process.env.ORIGIN || 'http://localhost:3000';
+const FRONTEND_URL = process.env.ORIGIN || 'http://localhost:3000';
 
 // Middleware configuration
 
@@ -29,7 +29,7 @@ export default app => {
   // controls a very specific header to pass headers from the frontend
   app.use(
     cors({
-      origin: process.env.FRONTEND_URL,
+      origin: FRONTEND_URL,
     })
   );
 

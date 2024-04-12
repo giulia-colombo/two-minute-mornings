@@ -1289,3 +1289,16 @@
 [12-04-2024 10:25:00] error: 	Caught exception: ReferenceError: FRONTEND_URL is not defined. Exception origin: unhandledRejection
 [12-04-2024 10:26:34] info: 	Connected to Mongo! Database name: "test"
 [12-04-2024 10:26:34] info: 	Server listening on http://localhost:5005
+[12-04-2024 17:29:30] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 17:29:30] info: 	Server listening on http://localhost:5005
+[12-04-2024 17:29:37] error: 	ERROR
+[12-04-2024 17:31:50] error: 	ERROR
+[12-04-2024 17:32:17] error: 	ERROR
+[12-04-2024 17:52:09] error: 	ERROR
+[12-04-2024 17:52:20] info: 	Sending welcome email to giulia.colombo.127@gmail.com with name Giulia
+[12-04-2024 17:55:27] info: 	req.payload
+[12-04-2024 17:55:31] info: 	req.payload
+[12-04-2024 17:55:38] info: 	req.payload
+[12-04-2024 17:55:40] info: 	req.payload
+[12-04-2024 18:35:00] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 18:35:00] info: 	Server listening on http://localhost:5005

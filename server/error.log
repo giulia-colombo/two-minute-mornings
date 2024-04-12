@@ -123,3 +123,7 @@
 [10-04-2024 15:35:32] error: 	ERROR
 [12-04-2024 10:08:14] error: 	ERROR
 [12-04-2024 10:25:00] error: 	Caught exception: ReferenceError: FRONTEND_URL is not defined. Exception origin: unhandledRejection
+[12-04-2024 17:29:37] error: 	ERROR
+[12-04-2024 17:31:50] error: 	ERROR
+[12-04-2024 17:32:17] error: 	ERROR
+[12-04-2024 17:52:09] error: 	ERROR
