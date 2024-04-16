@@ -22,6 +22,8 @@ const MONGO_URI =
 
 const connectDB = async () => {
   try {
+    logger.info('Attempting to connect to MongoDB...');
+
     const connection = await mongoose.connect(MONGO_URI);
     const dbName = connection.connections[0].name;
     logger.info(`Connected to Mongo! Database name: "${dbName}"`);

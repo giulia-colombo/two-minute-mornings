@@ -1302,3 +1302,23 @@
 [12-04-2024 17:55:40] info: 	req.payload
 [12-04-2024 18:35:00] info: 	Connected to Mongo! Database name: "test"
 [12-04-2024 18:35:00] info: 	Server listening on http://localhost:5005
+[12-04-2024 18:50:50] info: 	Attempting to connect to MongoDB...
+[12-04-2024 18:50:51] info: 	Connected to Mongo! Database name: "test"
+[12-04-2024 18:50:51] info: 	Server listening on http://localhost:5005
+[12-04-2024 21:00:14] info: 	usersWithIncompleteEntry
+[12-04-2024 21:00:14] info: 	usersWithIncompleteEntries: 
+[12-04-2024 21:00:14] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[12-04-2024 21:00:14] info: 	Sending reminder email to giulia.colombo.127@gmail.com with name Giulia
+[16-04-2024 16:30:18] info: 	Attempting to connect to MongoDB...
+[16-04-2024 16:30:19] info: 	Connected to Mongo! Database name: "test"
+[16-04-2024 16:30:19] info: 	Server listening on http://localhost:5005
+[16-04-2024 16:42:27] info: 	Attempting to connect to MongoDB...
+[16-04-2024 16:42:28] info: 	Connected to Mongo! Database name: "test"
+[16-04-2024 16:42:28] info: 	Server listening on http://localhost:5005
+[16-04-2024 16:46:50] info: 	Attempting to connect to MongoDB...
+[16-04-2024 16:46:51] info: 	Connected to Mongo! Database name: "test"
+[16-04-2024 16:46:51] info: 	Server listening on http://localhost:5005
+[16-04-2024 16:47:24] info: 	Server starting...
+[16-04-2024 16:47:24] info: 	Attempting to connect to MongoDB...
+[16-04-2024 16:47:24] info: 	Connected to Mongo! Database name: "test"
+[16-04-2024 16:47:24] info: 	Server listening on http://localhost:5005
