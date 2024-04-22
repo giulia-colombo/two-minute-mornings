@@ -39,10 +39,10 @@ import authRoutes from './routes/auth.routes.js';
 app.use('/auth', authRoutes);
 
 import entryRoutes from './routes/entry.routes.js';
-app.use('/api', isAuthenticated, entryRoutes);
+app.use('/api', entryRoutes);
 
 import userRoutes from './routes/user.routes.js';
-app.use('/api', isAuthenticated, userRoutes);
+app.use('/api', userRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 // require('./error-handling')(app);
