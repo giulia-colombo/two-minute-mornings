@@ -17,6 +17,16 @@ import {
   getLongestPromptOnAvg,
 } from '../stats/stats.js';
 
+//GET/ /api/giulia
+router.get('/giulia', (req, res, next) => {
+  try {
+    res.json('Hello there');
+  } catch (err) {
+    logger.error(err);
+    res.status(500).send("Couldn't find anything");
+  }
+});
+
 // GET /api/entries
 router.get('/entries', isAuthenticated, async (req, res, next) => {
   const creator = req.payload._id;
