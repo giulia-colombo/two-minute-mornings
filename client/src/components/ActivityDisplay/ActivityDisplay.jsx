@@ -4,7 +4,7 @@ import CardDisplay from '../CardDisplay/CardDisplay';
 
 function ActivityDisplay() {
   const ACTIVITY_API_URL =
-    'http://www.boredapi.com/api/activity?participants=1';
+    'https://www.boredapi.com/api/activity?participants=1';
   const [activity, setActivity] = useState(null);
   const [error, setError] = useState(null);
 
