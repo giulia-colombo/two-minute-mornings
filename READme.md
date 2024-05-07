@@ -1,6 +1,6 @@
 # Two Minute Mornings
 
-Inspired by Neil Pasricha's transformative practice, this app provides daily journaling prompts to cultivate gratitude, focus, and a positive mindset. Reflect for just two minutes each morning and experience the power of mindful journaling.
+Inspired by [Neil Pasricha](https://www.neil.blog/)'s transformative practice, this app provides daily journaling prompts to cultivate gratitude, focus, and a positive mindset. Reflect for just two minutes each morning and experience the power of mindful journaling.
 
 ## How to use this app
 
