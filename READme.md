@@ -83,12 +83,13 @@ This document describes the API endpoints for a journaling application. It's ass
 - Response Format: JSON Array
 - Example Response:
   `{ 
-"_id": "ObjectId(fh4fu1u8hj)", 
-"focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(1748ybvsjfd)", 
+"_id": "ObjectId(abcdef0123456789abcdef012345)", 
+"focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(abcdef0123456789abcdef012345)", 
 "createdAt": "2024-06-26T00:00:00.000Z", 
 "updatedAt": "2024-06-26T00:00:00.000Z" 
 }`
-  **2. GET /api/entries/:entryId (Authenticated)**
+
+**2. GET /api/entries/:entryId (Authenticated)**
 
 - Description: Retrieves a specific journal entry by its ID.
 - Request Parameters:
@@ -96,7 +97,7 @@ This document describes the API endpoints for a journaling application. It's ass
 - Response Format: JSON Object (including all entry fields)
 - Example Response:
   `
-{ "_id": "ObjectId(......)",  "focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(......)", "createdAt": "2024-06-26T00:00:00.000Z", "updatedAt": "2024-06-26T00:00:00.000Z" }`
+{ "_id": "ObjectId(abcdef0123456789abcdef012345)",  "focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(abcdef0123456789abcdef012345)", "createdAt": "2024-06-26T00:00:00.000Z", "updatedAt": "2024-06-26T00:00:00.000Z" }`
 
 **3. POST /api/entries (Authenticated)**
 
@@ -107,7 +108,7 @@ This document describes the API endpoints for a journaling application. It's ass
   - `letGoPrompt` (string): The prompt for the user to identify things they want to let go of.
 - Response Format: JSON Object (including the newly created entry)
 - Example Response:
-  `{ "newEntry": { "_id": "ObjectId(...省略...)", // Replace with a sample ObjectID "focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(...省略...)", // Replace with a sample ObjectID "createdAt": "2024-06-26T00:00:00.000Z", "updatedAt": "2024-06-26T00:00:00.000Z" }, "entryCreator": { "_id": "ObjectId(...省略...)", // Replace with a sample ObjectID // Other user fields (depending on your User model) } }
+  `{ "newEntry": { "_id": "ObjectId(abcdef0123456789abcdef012345)", // Replace with a sample ObjectID "focusPrompt": "What are you focusing on today?", "gratefulPrompt": "What are you grateful for today?", "letGoPrompt": "What do you want to let go of today?", "creator": "ObjectId(abcdef0123456789abcdef012345)", "createdAt": "2024-06-26T00:00:00.000Z", "updatedAt": "2024-06-26T00:00:00.000Z" }, "entryCreator": { "_id": "ObjectId(abcdef0123456789abcdef012345)" } }
 `
 
 **4. PUT /api/entries/:entryId (Authenticated)**
@@ -139,7 +140,7 @@ This document describes the API endpoints for a journaling application. It's ass
 - Authorization check: Only returns the profile if the requested user ID matches the authenticated user's ID.
 - Response Format: JSON Object containing user profile information.
 - Example Response:
-  `{ "_id": "ObjectId(...)", "username": "johndoe", "email": "johndoe@example.com", // Other user profile fields (depending on your User model) "createdAt": "2024-06-20T00:00:00.000Z", "updatedAt": "2024-06-25T00:00:00.000Z" }
+  `{ "_id": "ObjectId(abcdef0123456789abcdef012345)", "username": "johndoe", "email": "johndoe@example.com", // Other user profile fields (depending on your User model) "createdAt": "2024-06-20T00:00:00.000Z", "updatedAt": "2024-06-25T00:00:00.000Z" }
 `
   **2. PUT /api/users/:userId (Authenticated)**
 - Description: Updates the profile of the authenticated user.
@@ -149,7 +150,7 @@ This document describes the API endpoints for a journaling application. It's ass
 - Response Format: JSON Object containing the updated user profile information.
 - Example Response:
   `{
-  "_id": "ObjectId(...省略...)",
+  "_id": "ObjectId(abcdef0123456789abcdef012345)",
   "username": "janedoe",  // Updated username
   "email": "janedoe@example.com",
   // Other user profile fields
