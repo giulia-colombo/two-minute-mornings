@@ -58,18 +58,21 @@ These prompts are brief but impactful, allowing you to maintain this positive pr
 
 ## Schemas
 
-- **Entry**
-  This schema defines the structure of a journal entry in the application.
-  _ **focusPrompt (string):** The prompt for the user to focus on during their journaling session.
-  _ **gratefulPrompt (string):** The prompt for the user to reflect on things they are grateful for.
-  _ **letGoPrompt (string):** The prompt for the user to identify things they want to let go of.
-  _ **creator (ObjectId):** A reference to the user who created the journal entry.
-- **User**
-  This schema defines the structure of a user in the application.
-  _ **email** (string)
-  _ **password** (string)
-  _ **name** (string)
-  _ **entries** (ObjectID): A reference to the array of entries the user has created.
+**Entry**
+This schema defines the structure of a journal entry in the application.
+
+- **focusPrompt (string):** The prompt for the user to focus on during their journaling session.
+- **gratefulPrompt (string):** The prompt for the user to reflect on things they are grateful for.
+- **letGoPrompt (string):** The prompt for the user to identify things they want to let go of.
+- **creator (ObjectId):** A reference to the user who created the journal entry.
+
+**User**
+This schema defines the structure of a user in the application.
+
+- **email** (string)
+- **password** (string)
+- **name** (string)
+- **entries** (ObjectID): A reference to the array of entries the user has created.
 
 ## API Documentation
 
