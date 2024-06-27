@@ -59,6 +59,7 @@ These prompts are brief but impactful, allowing you to maintain this positive pr
 ## Schemas
 
 **Entry**
+\
 This schema defines the structure of a journal entry in the application.
 
 - **focusPrompt (string):** The prompt for the user to focus on during their journaling session.
@@ -67,6 +68,7 @@ This schema defines the structure of a journal entry in the application.
 - **creator (ObjectId):** A reference to the user who created the journal entry.
 
 **User**
+\
 This schema defines the structure of a user in the application.
 
 - **email** (string)
